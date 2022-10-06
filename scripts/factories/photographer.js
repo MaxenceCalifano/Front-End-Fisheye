@@ -6,9 +6,12 @@ function photographerFactory(data) {
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
 
+        const h2AndImage = document.createElement('a');
+        h2AndImage.setAttribute("href", "photographer.html")
+
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
-        img.setAttribute("alt", "portrait du photographe")
+        img.setAttribute("aria-label", name)
 
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
@@ -21,9 +24,9 @@ function photographerFactory(data) {
 
         const priceText = document.createElement("p");
         priceText.textContent = `${price}€/jour`
-
-        article.appendChild(img);
-        article.appendChild(h2);
+        article.appendChild(h2AndImage);
+        h2AndImage.appendChild(img);
+        h2AndImage.appendChild(h2);
         article.appendChild(p);
         article.appendChild(taglineText);
         article.appendChild(priceText);
