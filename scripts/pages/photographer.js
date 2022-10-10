@@ -15,12 +15,14 @@ async function getPhotographer() {
 }
 
     
-async function displayData(photographer) {
+ function displayData(photographer) {
         const photographerSection = document.querySelector(".photograph-header"); 
         const photographerModel = photographerFactory(photographer, 'photographerPage');
-        const userCardDOM = photographerModel.getUserCardDOM();
-        console.log('userCardDOM', typeof userCardDOM)
-        photographerSection.appendChild(userCardDOM);
+        const userPageDOM = photographerModel.getPhotographerPage();
+        
+        photographerSection.appendChild(userPageDOM[1])
+        photographerSection.appendChild(userPageDOM[0]);
+        photographerSection.innerHTML += userPageDOM[2];
 };
 
 

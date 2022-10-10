@@ -3,9 +3,9 @@ function photographerFactory(data, type) {
     //console.log('data ', data)
     const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
 
-    
+    if(type === "homePage") {
         function getUserCardDOM() {
-            if(type === "homePage") {
+            
                 const article = document.createElement( 'article' );
         
                 const h2AndImage = document.createElement('a');
@@ -32,17 +32,16 @@ function photographerFactory(data, type) {
                 article.appendChild(taglineText);
                 article.appendChild(priceText);
                 return (article);
-            } else if(type === 'photographerPage') {
-                //function photographerPage() {
-               // const test = document.createElement( 'article' );
-
+            } 
+        }   else if(type === 'photographerPage') {
+                function getPhotographerPage() {
                     const photographer_profile = new photographerProfile(data).createPhotographerProfile();
-                    console.log(photographer_profile)
-                   // test.appendChild(photographer_profile)
-                    return photographer_profile;
-                //}
+                    const userImg = new user(picture).createUserImg();
+                    const button = new contact_button().createButton();
+                
+                return [photographer_profile, userImg, button]
             }
-        }        
+        }     
      
-    return { name, picture, getUserCardDOM }
+    return { name, picture, getUserCardDOM, getPhotographerPage }
 }
