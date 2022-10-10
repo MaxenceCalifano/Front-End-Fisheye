@@ -21,7 +21,9 @@ class photographerProfile {
         this._tagline = data.tagline;
     }
     createPhotographerProfile() {
-    const photographerDiv = document.createElement('div')
+    const photographerDiv = document.createElement('div');
+    photographerDiv.setAttribute("class", "photographer-profile");
+
     const h1 = document.createElement('h1');
     const locationP = document.createElement('p');
     const tagline= document.createElement('p');
@@ -53,7 +55,9 @@ class photograph_header {
         //div.appendChild()
     }
     createPhotographerProfile() {
-        const photographerDiv = document.createElement('div')
+        const photographerDiv = document.createElement('div');
+        photographerDiv.setAttribute("class", "photographer-profile");
+        console.log(photographerDiv)
         const h1 = document.createElement('h1');
         const locationP = document.createElement('p');
         const tagline= document.createElement('p');
