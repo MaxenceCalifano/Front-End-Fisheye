@@ -32,7 +32,11 @@ async function displayMedia(photographerMedia, name) {
     const firstName = name.split(' ')[0].replace('-', ' ');
 
     console.log(firstName)
-    const mediaSection = document.querySelector("main");
+    const main = document.querySelector('main');
+    const mediaSection = document.createElement("div");
+    mediaSection.setAttribute("class", "thumbs_gallery")
+    main.appendChild(mediaSection);
+
     photographerMedia.forEach( media => {
         const mediaModel = mediafactory(media, firstName);
         const imageCard = mediaModel.getImageCard();

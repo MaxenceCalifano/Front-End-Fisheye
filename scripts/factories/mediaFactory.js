@@ -3,7 +3,6 @@ function mediafactory(media, name) {
     function getImageCard() {
         const image = document.createElement('img');
         image.setAttribute('src', `../../assets/images/Sample Photos/${name}/${media.image}`)
-        console.log(image)
         return image;
     }
     return {getImageCard};
