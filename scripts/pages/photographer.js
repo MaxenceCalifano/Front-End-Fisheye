@@ -31,14 +31,6 @@ async function getPhotographer() {
         photographerSection.appendChild(userImg);
         photographerSection.appendChild(priceCard);
 
-        // Create the fixed price cards
-       /*  const priceCard = document.createElement('div');
-        priceCard.className = 'priceCard';
-        main.appendChild(priceCard);
-        const price = document.createElement('p');
-        price.textContent = `${photographer.price}€ / jour`;
-        priceCard.appendChild(price); */
-
 };
 
 async function displayMedia(photographerMedia, name) {

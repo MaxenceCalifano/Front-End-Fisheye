@@ -19,6 +19,7 @@
     border-radius: 5px 5px 0 0;
     padding: 0 10px;
     font-weight: 500;
+    z-index: 2;
 }
 
 .thumbs_gallery {
@@ -28,16 +29,64 @@
     justify-content: space-around;
 }
 
+.thumbs_gallery a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
 .thumbs_gallery img {
     width: 350px;
     height: 300px;
     object-fit: cover;
 }
 
+.likes {
+    font-weight: 600;
+}
+
+.captionAndLikes,
+.likes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .thumbs_gallery video {
     width: 350px;
     height: 300px;
     object-fit: cover;
+}
+
+/* HEART */
+.heart {
+    background-color: var(--primary-color);
+    display: inline-block;
+    height: 10px;
+    margin: 0 10px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    width: 10px;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+}
+
+.heart:before {
+    top: -5px;
+    left: 0;
+}
+
+.heart:after {
+    left: 5px;
+    top: 0;
 }
 
 .contact_button {
