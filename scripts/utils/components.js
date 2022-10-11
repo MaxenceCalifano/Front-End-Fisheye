@@ -36,7 +36,7 @@ class photographerProfile {
     photographerDiv.appendChild(locationP);
     photographerDiv.appendChild(tagline);
 
-    return   photographerDiv;
+    return  photographerDiv;
     }
 }
 
@@ -44,5 +44,19 @@ class contact_button {
     createButton() {
         const button = '<button class="contact_button" onclick="displayModal()">Contactez-moi</button>';
         return button;
+    }
+}
+
+class price_card {
+    constructor(price) {
+        this._price = price;
+    }
+    createPriceCard() {
+        const priceCard = document.createElement('div');
+        priceCard.className = 'priceCard';
+        const priceHolder = document.createElement('p');
+        priceHolder.textContent = `${this._price}€ / jour`;
+        priceCard.appendChild(priceHolder);
+        return priceCard;
     }
 }

@@ -38,8 +38,9 @@ function photographerFactory(data, type) {
                     const photographer_profile = new photographerProfile(data).createPhotographerProfile();
                     const userImg = new user(picture).createUserImg();
                     const button = new contact_button().createButton();
+                    const priceCard = new price_card(price).createPriceCard();
                 
-                return [photographer_profile, userImg, button]
+                return {photographer_profile: photographer_profile, userImg: userImg, button: button, priceCard: priceCard}
             }
         }     
      

@@ -20,19 +20,24 @@ async function getPhotographer() {
  function displayData(photographer) {
         const photographerSection = document.querySelector(".photograph-header"); 
         const photographerModel = photographerFactory(photographer, 'photographerPage');
-        const userPageDOM = photographerModel.getPhotographerPage();
+
+        const {photographer_profile} = photographerModel.getPhotographerPage();
+        const {userImg} = photographerModel.getPhotographerPage();
+        const {button} = photographerModel.getPhotographerPage();
+        const {priceCard} = photographerModel.getPhotographerPage();
         
-        photographerSection.appendChild(userPageDOM[0]);
-        photographerSection.innerHTML += userPageDOM[2];
-        photographerSection.appendChild(userPageDOM[1]);
+        photographerSection.appendChild(photographer_profile);
+        photographerSection.innerHTML += button;
+        photographerSection.appendChild(userImg);
+        photographerSection.appendChild(priceCard);
 
         // Create the fixed price cards
-        const priceCard = document.createElement('div');
+       /*  const priceCard = document.createElement('div');
         priceCard.className = 'priceCard';
         main.appendChild(priceCard);
         const price = document.createElement('p');
         price.textContent = `${photographer.price}€ / jour`;
-        priceCard.appendChild(price);
+        priceCard.appendChild(price); */
 
 };
 
