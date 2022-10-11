@@ -26,12 +26,19 @@ async function getPhotographer() {
         photographerSection.innerHTML += userPageDOM[2];
         photographerSection.appendChild(userPageDOM[1]);
 
+        // Create the fixed price cards
+        const priceCard = document.createElement('div');
+        priceCard.className = 'priceCard';
+        main.appendChild(priceCard);
+        const price = document.createElement('p');
+        price.textContent = `${photographer.price}€ / jour`;
+        priceCard.appendChild(price);
+
 };
 
 async function displayMedia(photographerMedia, name) {
     const firstName = name.split(' ')[0].replace('-', ' ');
 
-    console.log(firstName)
     const main = document.querySelector('main');
     const mediaSection = document.createElement("div");
     mediaSection.setAttribute("class", "thumbs_gallery")
