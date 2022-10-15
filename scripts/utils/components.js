@@ -9,7 +9,7 @@ class user {
         img.setAttribute("alt", "");
         img.setAttribute("class", "user");
 
-        return img
+        return img;
     }
 }
 
@@ -78,3 +78,68 @@ class likes {
         return likes;
     }
 }
+
+class dropdown {
+    createDropDown() {
+        /* let dropdown = document.createElement('div');
+        const label = document.createElement('p');
+        label.textContent = 'labbeledby:';
+
+        let optionContainer = document.createElement('div');
+        optionContainer.setAttribute('class', 'dropdown_options');
+
+
+        const option1 = document.createElement('button');
+        option1.textContent = 'Popularité';
+        option1.setAttribute('class', 'contact_button');
+
+        const option2 = document.createElement('button');
+        option2.textContent = 'Date';
+        option2.setAttribute('class', 'contact_button');
+
+
+        const option3 = document.createElement('button');
+        option3.textContent = 'Titre';
+        option3.setAttribute('class', 'contact_button');
+
+
+        dropdown.appendChild(label);
+        optionContainer.appendChild(option1);
+        optionContainer.appendChild(option2);
+        optionContainer.appendChild(option3);
+        dropdown.appendChild(optionContainer); */
+
+        const dropdown = document.createElement('div');
+        dropdown.setAttribute('class', 'dropdown_wrapper')
+        const label = document.createElement('label');
+        label.setAttribute('for', 'order-by');
+        label.textContent = "Trier par";
+
+        const select = document.createElement("select");
+        select.setAttribute("name", "order-by");
+        select.setAttribute("id", "order-by");
+        select.setAttribute("class", "dropdown");
+
+        const option1 = document.createElement('option');
+        option1.setAttribute('value', 'popularite');
+        option1.textContent = "Popularité";
+        
+        const option2 = document.createElement('option');
+        option2.setAttribute('value', 'date');
+        option2.textContent = "Date";
+        
+        const option3 = document.createElement('option');
+        option3.setAttribute('value', 'titre');
+        option3.textContent = "Titre";
+
+        select.appendChild(option1);
+        select.appendChild(option2);
+        select.appendChild(option3);
+
+        dropdown.appendChild(label);
+        dropdown.appendChild(select);
+
+        return dropdown;
+    }
+}
+

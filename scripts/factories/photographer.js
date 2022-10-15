@@ -39,8 +39,9 @@ function photographerFactory(data, type) {
                     const userImg = new user(picture).createUserImg();
                     const button = new contact_button().createButton();
                     const priceCard = new price_card(price).createPriceCard();
+                    const testDropdown = new dropdown().createDropDown();
                 
-                return {photographer_profile: photographer_profile, userImg: userImg, button: button, priceCard: priceCard}
+                return {photographer_profile: photographer_profile, userImg: userImg, button: button, priceCard: priceCard, dropdown : testDropdown}
             }
         }     
      

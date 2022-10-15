@@ -22,11 +22,19 @@
     z-index: 2;
 }
 
+.dropdown_wrapper {
+    margin: 0 100px;
+}
+
+.thumbs_gallery {
+    margin: 20px 100px;
+}
+
 .thumbs_gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
-    justify-content: space-around;
+    gap: 10px;
+    justify-content: space-between;
 }
 
 .thumbs_gallery a {
@@ -89,7 +97,8 @@
     top: 0;
 }
 
-.contact_button {
+.contact_button,
+.dropdown {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -100,6 +109,15 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.dropdown_wrapper label {
+    margin: 0 10px;
+}
+
+.dropdown option:after {
+    content: " ";
+    border-top: 2px white solid;
 }
 
 .modal {
