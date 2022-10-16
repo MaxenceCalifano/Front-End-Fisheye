@@ -5,5 +5,10 @@ function displayModal() {
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
-    modal.style.display = "none";
+    modal.setAttribute("closing", "");
+  
+    modal.addEventListener("animationend", () => {
+      modal.removeAttribute("closing");
+      modal.style.display= "none";
+    }, {once: true})
 }
