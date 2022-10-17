@@ -40,7 +40,7 @@ function photographerFactory(data, type) {
                     const button = new contact_button().createButton();
                     const priceCard = new price_card(price).createPriceCard();
                     const dropDown = new dropdown().createDropDown();
-                    const contactModal = new contact_modal().render();
+                    const contactModal = new contact_modal(name).render();
                 
                 return {photographer_profile: photographer_profile, userImg: userImg, button: button, priceCard: priceCard, dropDown : dropDown, contactModal: contactModal}
             }
