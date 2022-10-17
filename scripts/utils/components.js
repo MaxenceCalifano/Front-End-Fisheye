@@ -145,7 +145,7 @@ class contact_modal {
             if(event.key === 'Enter' || event.key === 'Escape'){
                 closeModal();
             }
-        } )
+        })
         img.setAttribute('tabindex', 0);
 
         header.appendChild(h1);
