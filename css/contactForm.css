@@ -14,6 +14,30 @@
     animation: modalclose 800ms;
 }
 
+/* FORM */
+form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.formData {
+    width: 100%;
+}
+
+form label {
+    color: #312E2E;
+    /* font-size: 36px; */
+}
+
+form input {
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 35px;
+}
+
 @keyframes modalopen {
     from {
         opacity: 0;
