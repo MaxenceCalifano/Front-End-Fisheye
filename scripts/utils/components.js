@@ -81,33 +81,6 @@ class likes {
 
 class dropdown {
     createDropDown() {
-        /* let dropdown = document.createElement('div');
-        const label = document.createElement('p');
-        label.textContent = 'labbeledby:';
-
-        let optionContainer = document.createElement('div');
-        optionContainer.setAttribute('class', 'dropdown_options');
-
-
-        const option1 = document.createElement('button');
-        option1.textContent = 'Popularité';
-        option1.setAttribute('class', 'contact_button');
-
-        const option2 = document.createElement('button');
-        option2.textContent = 'Date';
-        option2.setAttribute('class', 'contact_button');
-
-
-        const option3 = document.createElement('button');
-        option3.textContent = 'Titre';
-        option3.setAttribute('class', 'contact_button');
-
-
-        dropdown.appendChild(label);
-        optionContainer.appendChild(option1);
-        optionContainer.appendChild(option2);
-        optionContainer.appendChild(option3);
-        dropdown.appendChild(optionContainer); */
 
         const dropdown = document.createElement('div');
         dropdown.setAttribute('class', 'dropdown_wrapper')
@@ -143,3 +116,86 @@ class dropdown {
     }
 }
 
+class contact_modal {
+    render() {
+        const contactModal = document.createElement('div');
+        contactModal.setAttribute('id', 'contact_modal');
+        contactModal.setAttribute('role', 'dialog');
+
+        // MODAL DIV
+        const modal = document.createElement('div');
+        modal.setAttribute('class', 'modal');
+        contactModal.appendChild(modal);
+
+        // HEADER
+        const header = document.createElement('header');
+        const h2 = document.createElement('h2');
+        h2.textContent = "Contactez-moi"; // TODO ajouter le nom du photographe
+        const img = document.createElement('img'); // TODO rendre accessible
+        img.setAttribute('src', '../../assets/icons/close.svg');
+        img.setAttribute('onclick', 'closeModal()');
+
+        header.appendChild(h2);
+        header.appendChild(img);
+        modal.appendChild(header);
+
+        // FORM
+        const form = document.createElement('form');
+
+        const firstNameLabel = document.createElement('label');
+        firstNameLabel.setAttribute('for', 'prenom');
+        firstNameLabel.textContent = 'Prénom';
+        const firstNameInput = document.createElement('input');
+        firstNameInput.setAttribute('id', 'prenom');
+        firstNameInput.setAttribute('name', 'prenom');
+        firstNameInput.setAttribute('type', 'text');
+        firstNameInput.setAttribute('minlength', '2');
+        firstNameInput.setAttribute('required', 'true');
+        form.appendChild(firstNameLabel);
+        form.appendChild(firstNameInput);
+        
+        const lastNameLabel = document.createElement('label');
+        lastNameLabel.setAttribute('for', 'nom');
+        lastNameLabel.textContent = 'Nom';
+        const lastNameInput = document.createElement('input');
+        lastNameInput.setAttribute('id', 'nom');
+        lastNameInput.setAttribute('name', 'nom');
+        lastNameInput.setAttribute('type', 'text');
+        lastNameInput.setAttribute('minlength', '2');
+        lastNameInput.setAttribute('required', 'true');
+        form.appendChild(lastNameLabel);
+        form.appendChild(lastNameInput);
+
+        const emailLabel = document.createElement('label');
+        emailLabel.setAttribute('for', 'email');
+        emailLabel.textContent = 'Email';
+        const emailInput = document.createElement('input');
+        emailInput.setAttribute('id', 'email');
+        emailInput.setAttribute('name', 'email');
+        emailInput.setAttribute('type', 'email');
+        emailInput.setAttribute('required', 'true');
+        form.appendChild(emailLabel);
+        form.appendChild(emailInput);
+
+        const messageLabel = document.createElement('label');
+        messageLabel.setAttribute('for', 'message');
+        messageLabel.textContent = 'Votre message';
+        const messageInput = document.createElement('textarea');
+        messageInput.setAttribute('id', 'message');
+        messageInput.setAttribute('name', 'message');
+        messageInput.setAttribute('minlength', '20');
+        messageInput.setAttribute('required', 'true');
+        form.appendChild(messageLabel);
+        form.appendChild(messageInput);
+
+        // Button
+        const button = document.createElement('button');
+        button.setAttribute('class', 'contact_button');
+        button.textContent = 'Envoyer';
+        form.appendChild(button);
+
+        modal.appendChild(form);
+
+        return contactModal;
+    }
+}

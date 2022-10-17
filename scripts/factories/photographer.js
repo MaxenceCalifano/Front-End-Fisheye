@@ -39,9 +39,10 @@ function photographerFactory(data, type) {
                     const userImg = new user(picture).createUserImg();
                     const button = new contact_button().createButton();
                     const priceCard = new price_card(price).createPriceCard();
-                    const testDropdown = new dropdown().createDropDown();
+                    const dropDown = new dropdown().createDropDown();
+                    const contactModal = new contact_modal().render();
                 
-                return {photographer_profile: photographer_profile, userImg: userImg, button: button, priceCard: priceCard, dropdown : testDropdown}
+                return {photographer_profile: photographer_profile, userImg: userImg, button: button, priceCard: priceCard, dropDown : dropDown, contactModal: contactModal}
             }
         }     
      

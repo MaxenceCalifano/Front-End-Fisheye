@@ -15,6 +15,7 @@ function closeModal() {
 }
 
 const form = document.querySelector("#contact_modal form");
+console.log(form);
 form.addEventListener("submit", function(e){
   e.preventDefault();
   const formData = new FormData(form);

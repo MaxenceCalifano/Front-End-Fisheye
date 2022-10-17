@@ -25,13 +25,15 @@ async function getPhotographer() {
         const {userImg} = photographerModel.getPhotographerPage();
         const {button} = photographerModel.getPhotographerPage();
         const {priceCard} = photographerModel.getPhotographerPage();
-        const {dropdown} = photographerModel.getPhotographerPage();
+        const {dropDown} = photographerModel.getPhotographerPage();
+        const {contactModal} = photographerModel.getPhotographerPage();
         
         photographerSection.appendChild(photographer_profile);
         photographerSection.innerHTML += button;
         photographerSection.appendChild(userImg);
         photographerSection.appendChild(priceCard);
-        photographerSection.after(dropdown);
+        photographerSection.after(dropDown);
+        photographerSection.after(contactModal);
 
 };
 
