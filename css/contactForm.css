@@ -13,16 +13,18 @@
 .modal header {
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 2%;
 }
 
 .modal header img {
     cursor: pointer;
+    width: 30px;
 }
 
-.modal header h2 {
-    font-size: 64px;
+.modal header h1 {
+    font-size: 3rem;
     font-weight: normal;
-    text-align: center;
+    color: black;
 }
 
 #contact_modal {
@@ -30,6 +32,7 @@
     top: 5%;
     width: 100%;
     animation: modalopen 800ms;
+    z-index: 1;
 }
 
 #contact_modal textarea {
@@ -39,6 +42,17 @@
 
 #contact_modal[closing] {
     animation: modalclose 800ms;
+}
+
+#contact_modal[aria-hidden=false]::after {
+    content: " ";
+    display: block;
+    width: 100%;
+    height: 1000%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: -20%;
+    z-index: -1;
 }
 
 /* FORM */
@@ -55,6 +69,7 @@ form {
 
 form label {
     color: #312E2E;
+    margin: 5px 0px;
     /* font-size: 36px; */
 }
 
