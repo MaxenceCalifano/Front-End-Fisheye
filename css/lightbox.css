@@ -1,0 +1,33 @@
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.prevButton,
+.nextButton {
+    background: url(../assets/icons/chevron.svg) center center / 20px 20px no-repeat;
+    width: 20px;
+    height: 100%;
+    border: none;
+    text-indent: -3000px;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    opacity: 0.5;
+    transition: 300ms;
+    right: 0;
+}
+
+.prevButton {
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.prevButton:hover,
+.nextButton:hover {
+    opacity: 1;
+}

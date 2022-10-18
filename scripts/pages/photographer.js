@@ -35,6 +35,10 @@ async function getPhotographer() {
         photographerSection.after(dropDown);
         photographerSection.after(contactModal);
 
+        const lightBox = new lightbox().render();
+
+        photographerSection.after(lightBox);
+
 };
 
 async function displayMedia(photographerMedia, name) {
@@ -44,6 +48,7 @@ async function displayMedia(photographerMedia, name) {
     const mediaSection = document.createElement("div");
     mediaSection.setAttribute("class", "thumbs_gallery")
     main.appendChild(mediaSection);
+    console.log(photographerMedia);
 
     photographerMedia.forEach( media => {
         const mediaModel = mediafactory(media, firstName);

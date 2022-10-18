@@ -274,3 +274,33 @@ class contact_modal {
         return contactModal;
     }
 }
+
+class lightbox {
+
+    render() {
+        // BUTTONS
+        const lightbox = document.createElement('div');
+        lightbox.classList.add("lightbox");
+        const nextButton = document.createElement('button');
+        nextButton.textContent = "Suivant";
+        nextButton.setAttribute('class', 'nextButton');
+
+        const prevButton = document.createElement('button');
+        prevButton.setAttribute('class', 'prevButton');
+        prevButton.textContent = "Précedent";
+
+        const closeButton = document.createElement('button');
+        closeButton.setAttribute('class', 'closeButton');
+        closeButton.textContent = "Fermer";
+
+        const imageContainer = document.createElement('div');
+        imageContainer.setAttribute('class', 'imageContainer');
+
+        lightbox.appendChild(prevButton);
+        lightbox.appendChild(nextButton);
+        lightbox.appendChild(closeButton);
+        lightbox.appendChild(imageContainer);
+
+        return lightbox;
+    }
+}
