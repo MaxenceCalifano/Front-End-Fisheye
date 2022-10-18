@@ -277,8 +277,15 @@ class contact_modal {
 
 class lightbox {
 
+    getLinks() {
+        const links = document.querySelectorAll('.thumbs_gallery > a');
+        return links;
+    }
+
     render() {
         // BUTTONS
+        const links = this.getLinks();
+        console.log(links)
         const lightbox = document.createElement('div');
         lightbox.classList.add("lightbox");
         const nextButton = document.createElement('button');
@@ -295,6 +302,10 @@ class lightbox {
 
         const imageContainer = document.createElement('div');
         imageContainer.setAttribute('class', 'imageContainer');
+        const img = document.createElement('img');
+        imageContainer.insertAdjacentElement('beforeend',links[0] )
+        //img.setAttribute('src', "https://picsum.photos/200/300");
+        //imageContainer.appendChild(img);
 
         lightbox.appendChild(prevButton);
         lightbox.appendChild(nextButton);

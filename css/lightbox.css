@@ -7,27 +7,50 @@
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.prevButton,
-.nextButton {
-    background: url(../assets/icons/chevron.svg) center center / 20px 20px no-repeat;
-    width: 20px;
-    height: 100%;
-    border: none;
+.lightbox button {
     text-indent: -3000px;
-    cursor: pointer;
-    position: fixed;
-    top: 0;
+    border: none;
     opacity: 0.5;
     transition: 300ms;
-    right: 0;
+    cursor: pointer
+}
+
+.prevButton,
+.nextButton {
+    background: url(../assets/icons/chevron.svg) center center / 27px 27px no-repeat;
+    width: 20px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 10px;
 }
 
 .prevButton {
-    left: 0;
+    left: 10px;
     transform: rotate(180deg);
 }
 
-.prevButton:hover,
-.nextButton:hover {
+.lightbox button:hover {
     opacity: 1;
+}
+
+.closeButton {
+    background: url(../assets/icons/close.svg) center center / 21px 21px;
+    width: 21px;
+    height: 21px;
+    top: 10px;
+    position: fixed;
+    right: 10px;
+}
+
+.imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    margin: 0 50px;
+}
+
+.imageContainer img {
+    max-width: 100%;
 }
