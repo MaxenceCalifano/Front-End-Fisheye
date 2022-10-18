@@ -276,42 +276,50 @@ class contact_modal {
 }
 
 class lightbox {
-
-    getLinks() {
-        const links = document.querySelectorAll('.thumbs_gallery > a');
-        return links;
+    constructor() {
+        this.links = document.querySelectorAll('.thumbs_gallery > a figure img');
     }
 
+    getLinks() {
+        this.links.forEach((element) => {
+            element.addEventListener('click', (event) => {
+                event.preventDefault();
+                this.createLightBox(element);
+            })  
+        } );
+        return this.links;
+    }
+    createLightBox(element) {
+         // BUTTONS
+        const links = this.links;
+         const lightbox = document.createElement('div');
+         lightbox.classList.add("lightbox");
+         const nextButton = document.createElement('button');
+         nextButton.textContent = "Suivant";
+         nextButton.setAttribute('class', 'nextButton');
+ 
+         const prevButton = document.createElement('button');
+         prevButton.setAttribute('class', 'prevButton');
+         prevButton.textContent = "Précedent";
+ 
+         const closeButton = document.createElement('button');
+         closeButton.setAttribute('class', 'closeButton');
+         closeButton.textContent = "Fermer";
+ 
+         const imageContainer = document.createElement('div');
+         imageContainer.setAttribute('class', 'imageContainer');
+         const img = document.createElement('img');
+         imageContainer.insertAdjacentElement('beforeend', element)
+         
+ 
+         lightbox.appendChild(prevButton);
+         lightbox.appendChild(nextButton);
+         lightbox.appendChild(closeButton);
+         lightbox.appendChild(imageContainer);
+        document.body.appendChild(lightbox)
+        // return lightbox;
+    }
     render() {
-        // BUTTONS
-        const links = this.getLinks();
-        console.log(links)
-        const lightbox = document.createElement('div');
-        lightbox.classList.add("lightbox");
-        const nextButton = document.createElement('button');
-        nextButton.textContent = "Suivant";
-        nextButton.setAttribute('class', 'nextButton');
-
-        const prevButton = document.createElement('button');
-        prevButton.setAttribute('class', 'prevButton');
-        prevButton.textContent = "Précedent";
-
-        const closeButton = document.createElement('button');
-        closeButton.setAttribute('class', 'closeButton');
-        closeButton.textContent = "Fermer";
-
-        const imageContainer = document.createElement('div');
-        imageContainer.setAttribute('class', 'imageContainer');
-        const img = document.createElement('img');
-        imageContainer.insertAdjacentElement('beforeend',links[0] )
-        //img.setAttribute('src', "https://picsum.photos/200/300");
-        //imageContainer.appendChild(img);
-
-        lightbox.appendChild(prevButton);
-        lightbox.appendChild(nextButton);
-        lightbox.appendChild(closeButton);
-        lightbox.appendChild(imageContainer);
-
-        return lightbox;
+       this.getLinks();
     }
 }

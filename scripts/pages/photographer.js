@@ -60,7 +60,8 @@ async function init() {
     displayData(photographer);
     displayMedia(photographerMedia, photographer.name);
     const lightBox = new lightbox().render();
-    document.body.appendChild(lightBox)
+   // console.log(lightBox.render());
+   // document.body.appendChild(lightBox)
 };
 
 init();
