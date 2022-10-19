@@ -1,17 +1,3 @@
-class user {
-    constructor(picture) {
-        this._picture = picture;
-    }
-
-    createUserImg() {
-        const img = document.createElement( 'img' );
-        img.setAttribute("src", this._picture);
-        img.setAttribute("alt", "");
-        img.setAttribute("class", "user");
-
-        return img;
-    }
-}
 
 class photographerProfile {
     constructor(data) {
@@ -290,17 +276,33 @@ class lightbox {
         return this.links;
     }
     createLightBox(element) {
+        const links = Array.from(this.links);
+        console.log(links.indexOf(element)) // Donne l'index de l'image
          // BUTTONS
-        const links = this.links;
          const lightbox = document.createElement('div');
          lightbox.classList.add("lightbox");
+
+         //Next
          const nextButton = document.createElement('button');
          nextButton.textContent = "Suivant";
          nextButton.setAttribute('class', 'nextButton');
- 
+         nextButton.addEventListener('click', () => {
+            element = links[links.indexOf(element) +1]
+            console.log(links.indexOf(element));
+            img.setAttribute('src', element.src);
+            img.setAttribute('alt', element.alt);
+         })
+         
+         // Prev
          const prevButton = document.createElement('button');
          prevButton.setAttribute('class', 'prevButton');
          prevButton.textContent = "Précedent";
+         prevButton.addEventListener('click', () => {
+            element = links[links.indexOf(element) -1]
+            console.log(links.indexOf(element));
+            img.setAttribute('src', element.src);
+            img.setAttribute('alt', element.alt);
+         })
         
          // Close
          const closeButton = document.createElement('button');
