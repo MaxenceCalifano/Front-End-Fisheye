@@ -1,3 +1,17 @@
+class user {
+    constructor(picture) {
+        this._picture = picture;
+    }
+
+    createUserImg() {
+        const img = document.createElement( 'img' );
+        img.setAttribute("src", this._picture);
+        img.setAttribute("alt", "");
+        img.setAttribute("class", "user");
+
+        return img;
+    }
+}
 
 class photographerProfile {
     constructor(data) {
@@ -287,7 +301,12 @@ class lightbox {
          nextButton.textContent = "Suivant";
          nextButton.setAttribute('class', 'nextButton');
          nextButton.addEventListener('click', () => {
+          if(links.indexOf(element) === links.length - 1) {
+            element = links[0]
+          } else {
             element = links[links.indexOf(element) +1]
+          }
+          //console.log(links.indexOf(element), links.length)
             console.log(links.indexOf(element));
             img.setAttribute('src', element.src);
             img.setAttribute('alt', element.alt);
@@ -298,7 +317,11 @@ class lightbox {
          prevButton.setAttribute('class', 'prevButton');
          prevButton.textContent = "Précedent";
          prevButton.addEventListener('click', () => {
-            element = links[links.indexOf(element) -1]
+            if(links.indexOf(element) === 0) {
+                element = links[links.length - 1]
+              } else {
+                element = links[links.indexOf(element) -1]
+              }
             console.log(links.indexOf(element));
             img.setAttribute('src', element.src);
             img.setAttribute('alt', element.alt);

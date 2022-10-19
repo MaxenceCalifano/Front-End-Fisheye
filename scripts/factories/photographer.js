@@ -1,3 +1,5 @@
+//import { user } from '../Components/User'
+
 function photographerFactory(data, type) {
     const { name, portrait, city, country, tagline, price, id } = data;
     //console.log('data ', data)

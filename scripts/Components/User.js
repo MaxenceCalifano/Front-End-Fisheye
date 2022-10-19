@@ -1,4 +1,4 @@
-export default class user {
+class user {
     constructor(picture) {
         this._picture = picture;
     }
@@ -12,3 +12,5 @@ export default class user {
         return img;
     }
 }
+
+export {user}
