@@ -73,7 +73,7 @@ class price_card {
     constructor(price) {
         this._price = price;
     }
-    createPriceCard() {
+    render() {
         const priceCard = document.createElement('div');
         priceCard.className = 'priceCard';
         const priceHolder = document.createElement('p');
@@ -102,7 +102,7 @@ class likes {
 }
 
 class dropdown {
-    createDropDown() {
+    render() {
 
         const dropdown = document.createElement('div');
         dropdown.setAttribute('class', 'dropdown_wrapper')
@@ -239,7 +239,7 @@ class contact_modal {
         const messageErrorMessage =  document.createElement('span');
         messageErrorMessage.setAttribute('class', 'error');
         messageErrorMessage.setAttribute('aria-live', 'polite');
-        
+
         form.append(messageLabel, messageInput, messageErrorMessage);
 
         // Button

@@ -21,8 +21,8 @@ async function getPhotographer() {
         const main = document.querySelector("main"); 
         //const photographerModel = photographerFactory(photographer, 'photographerPage');
 
-        const priceCard = new price_card(photographer.price).createPriceCard();;
-        const dropDown = new dropdown().createDropDown();
+        const priceCard = new price_card(photographer.price).render();
+        const dropDown = new dropdown().render();
         const contactModal = new contact_modal(photographer.name).render();
 
         const photographerHeader = new photograph_header(photographer).render();
