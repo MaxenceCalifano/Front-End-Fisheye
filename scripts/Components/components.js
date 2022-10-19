@@ -13,7 +13,7 @@ class user {
     }
 }
 
-class photographerProfile {
+class photographer_profile {
     constructor(data) {
         this._name = data.name;
         this._city = data.city;
@@ -42,11 +42,33 @@ class photographerProfile {
 
 class contact_button {
     createButton() {
-        const button = '<button class="contact_button" onclick="displayModal()">Contactez-moi</button>';
+        const button = document.createElement('button');
+        button.classList.add('contact_button');
+        button.setAttribute('onclick', 'displayModal()');
+        button.textContent = 'Contactez-moi';
+        // '<button class="contact_button" onclick="displayModal()">Contactez-moi</button>';
         return button;
     }
 }
 
+class photograph_header {
+    constructor(data) {
+        this._data = data
+        this._image = `assets/photographers/Photographers ID Photos/${data.portrait}`
+        }
+    render() {
+        const photographerProfile = new photographer_profile(this._data).createPhotographerProfile()
+        const contactButton = new contact_button().createButton()
+        const photographerAvatar = new user(this._image).createUserImg()
+
+        const photographerHeaderContainer = document.createElement('div');
+        photographerHeaderContainer.setAttribute('class', 'photograph-header')
+        
+        photographerHeaderContainer.append(photographerProfile, contactButton, photographerAvatar)
+
+        return photographerHeaderContainer
+    }
+}
 class price_card {
     constructor(price) {
         this._price = price;
@@ -282,7 +304,6 @@ class lightbox {
     }
 
     getLinks() {
-        console.log(this.links)
         this.links.forEach((element) => {
             element.addEventListener('click', (event) => {
                 event.preventDefault();

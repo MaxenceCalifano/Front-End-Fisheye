@@ -18,22 +18,18 @@ async function getPhotographer() {
 
     
  function displayData(photographer) {
-        const photographerSection = document.querySelector(".photograph-header"); 
+        const main = document.querySelector("main"); 
         const photographerModel = photographerFactory(photographer, 'photographerPage');
 
-        const {photographer_profile} = photographerModel.getPhotographerPage();
-        const {userImg} = photographerModel.getPhotographerPage();
-        const {button} = photographerModel.getPhotographerPage();
         const {priceCard} = photographerModel.getPhotographerPage();
         const {dropDown} = photographerModel.getPhotographerPage();
         const {contactModal} = photographerModel.getPhotographerPage();
+
+        const photographerHeader = new photograph_header(photographer).render();
         
-        photographerSection.appendChild(photographer_profile);
-        photographerSection.innerHTML += button;
-        photographerSection.appendChild(userImg);
-        photographerSection.appendChild(priceCard);
-        photographerSection.after(dropDown);
-        photographerSection.after(contactModal);
+        main.append(photographerHeader, priceCard);
+        main.after(dropDown);
+        main.after(contactModal);
 
 };
 

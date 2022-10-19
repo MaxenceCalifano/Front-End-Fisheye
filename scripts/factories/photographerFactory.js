@@ -37,14 +37,14 @@ function photographerFactory(data, type) {
             } 
         }   else if(type === 'photographerPage') {
                 function getPhotographerPage() {
-                    const photographer_profile = new photographerProfile(data).createPhotographerProfile();
+                    const photographerProfile = new photographer_profile(data).createPhotographerProfile();
                     const userImg = new user(picture).createUserImg();
                     const button = new contact_button().createButton();
                     const priceCard = new price_card(price).createPriceCard();
                     const dropDown = new dropdown().createDropDown();
                     const contactModal = new contact_modal(name).render();
                 
-                return {photographer_profile: photographer_profile, userImg: userImg, button: button, priceCard: priceCard, dropDown : dropDown, contactModal: contactModal}
+                return {photographerProfile: photographerProfile, userImg: userImg, button: button, priceCard: priceCard, dropDown : dropDown, contactModal: contactModal}
             }
         }     
      
