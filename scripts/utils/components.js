@@ -301,16 +301,19 @@ class lightbox {
          const prevButton = document.createElement('button');
          prevButton.setAttribute('class', 'prevButton');
          prevButton.textContent = "Précedent";
- 
+        
+         // Close
          const closeButton = document.createElement('button');
          closeButton.setAttribute('class', 'closeButton');
          closeButton.textContent = "Fermer";
+         closeButton.addEventListener('click', () => lightbox.remove());
  
          const imageContainer = document.createElement('div');
          imageContainer.setAttribute('class', 'imageContainer');
          const img = document.createElement('img');
-         imageContainer.insertAdjacentElement('beforeend', element)
-         
+         img.setAttribute('src', element.src);
+         img.setAttribute('alt', element.alt);
+         imageContainer.appendChild(img);
  
          lightbox.appendChild(prevButton);
          lightbox.appendChild(nextButton);
@@ -319,6 +322,7 @@ class lightbox {
         document.body.appendChild(lightbox)
         // return lightbox;
     }
+
     render() {
        this.getLinks();
     }
