@@ -51,9 +51,9 @@ function mediafactory(media, name) {
             const video = document.createElement("video");
             const source = document.createElement("source");
 
-            video.setAttribute('controls', true);
             source.setAttribute('src', `../../assets/images/Sample Photos/${name}/${media.video}`);
             video.setAttribute('aria-label', "la lecture de la vidéo n'est pas lancée");
+            video.setAttribute('controls', true)
 
             video.appendChild(source);
             video.addEventListener('play', (e) => video.setAttribute('aria-label', 'la vidéo est en cours de lecture'));

@@ -4,7 +4,7 @@ async function getPhotographer() {
     
     let photographer;
     let media;
-    await fetch('../../data/photographers.json')
+    await fetch('https://maxencecalifano.github.io/Front-End-Fisheye/data/photographers.json')
     .then(res => res.json())
     .then(res => { photographer = res.photographers, media = res.media})
     .catch(err => console.log('an error occurs', err))

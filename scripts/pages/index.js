@@ -1,7 +1,7 @@
 async function getPhotographers() {
     // Penser à remplacer par les données récupérées dans le json
     let photographers;
-    await fetch('../../data/photographers.json')
+    await fetch('https://maxencecalifano.github.io/Front-End-Fisheye/data/photographers.json')
     .then(res => res.json())
     .then(res => { photographers = res.photographers})
     .catch(err => console.log('an error occurs', err))
