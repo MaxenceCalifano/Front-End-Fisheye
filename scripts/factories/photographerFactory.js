@@ -8,7 +8,7 @@ function photographerFactory(data) {
    
         function getUserCardDOM() {
             
-                const article = document.createElement( 'article' );
+                /* const article = document.createElement( 'article' );
         
                 const h2AndImage = document.createElement('a');
                 h2AndImage.setAttribute("href", `photographer.html?id=${id}`)
@@ -33,20 +33,9 @@ function photographerFactory(data) {
                 article.appendChild(p);
                 article.appendChild(taglineText);
                 article.appendChild(priceText);
-                return (article);
-            
-        }  /*  else if(type === 'photographerPage') {
-                function getPhotographerPage() {
-                     const photographerProfile = new photographer_profile(data).createPhotographerProfile();
-                    const userImg = new user(picture).createUserImg();
-                    const button = new contact_button().createButton();
-                    const priceCard = new price_card(price).createPriceCard();
-                    const dropDown = new dropdown().createDropDown();
-                    const contactModal = new contact_modal(name).render();
-                
-                return {photographerProfile: photographerProfile, userImg: userImg, button: button, priceCard: priceCard, dropDown : dropDown, contactModal: contactModal}
-                }
-        }   */   
+                return (article); */
+            return new userCard(data).render()
+        }   
      
     return { name, picture, getUserCardDOM }
 }

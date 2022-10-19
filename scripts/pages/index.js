@@ -13,11 +13,12 @@ async function getPhotographers() {
 }
 
 async function displayData(photographers) {
-    const photographersSection = document.querySelector(".photographer_section");
 
     const header = document.querySelector("header");
     const fishEyeLogo = new logo().render();
     header.insertAdjacentElement('afterbegin',fishEyeLogo);
+
+    const photographersSection = document.querySelector(".photographer_section");
    
     photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);
