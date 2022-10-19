@@ -18,6 +18,9 @@ async function getPhotographer() {
 
     
  function displayData(photographer) {
+        const header = document.querySelector("header");
+        const fishEyeLogo = new logo().render();
+        header.insertAdjacentElement('afterbegin',fishEyeLogo);
         const main = document.querySelector("main"); 
         //const photographerModel = photographerFactory(photographer, 'photographerPage');
 

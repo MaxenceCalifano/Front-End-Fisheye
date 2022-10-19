@@ -1,11 +1,11 @@
 //import { user } from '../Components/User'
 
-function photographerFactory(data, type) {
+function photographerFactory(data) {
     const { name, portrait, city, country, tagline, price, id } = data;
     //console.log('data ', data)
     const picture = `assets/photographers/Photographers ID Photos/${portrait}`;
 
-    if(type === "homePage") {
+   
         function getUserCardDOM() {
             
                 const article = document.createElement( 'article' );
@@ -34,10 +34,10 @@ function photographerFactory(data, type) {
                 article.appendChild(taglineText);
                 article.appendChild(priceText);
                 return (article);
-            } 
-        }   else if(type === 'photographerPage') {
+            
+        }  /*  else if(type === 'photographerPage') {
                 function getPhotographerPage() {
-                   /*  const photographerProfile = new photographer_profile(data).createPhotographerProfile();
+                     const photographerProfile = new photographer_profile(data).createPhotographerProfile();
                     const userImg = new user(picture).createUserImg();
                     const button = new contact_button().createButton();
                     const priceCard = new price_card(price).createPriceCard();
@@ -45,8 +45,8 @@ function photographerFactory(data, type) {
                     const contactModal = new contact_modal(name).render();
                 
                 return {photographerProfile: photographerProfile, userImg: userImg, button: button, priceCard: priceCard, dropDown : dropDown, contactModal: contactModal}
-                */}
-        }     
+                }
+        }   */   
      
-    return { name, picture, getUserCardDOM, getPhotographerPage }
+    return { name, picture, getUserCardDOM }
 }
