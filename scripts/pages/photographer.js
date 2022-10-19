@@ -19,17 +19,16 @@ async function getPhotographer() {
     
  function displayData(photographer) {
         const main = document.querySelector("main"); 
-        const photographerModel = photographerFactory(photographer, 'photographerPage');
+        //const photographerModel = photographerFactory(photographer, 'photographerPage');
 
-        const {priceCard} = photographerModel.getPhotographerPage();
-        const {dropDown} = photographerModel.getPhotographerPage();
-        const {contactModal} = photographerModel.getPhotographerPage();
+        const priceCard = new price_card(photographer.price).createPriceCard();;
+        const dropDown = new dropdown().createDropDown();
+        const contactModal = new contact_modal(photographer.name).render();
 
         const photographerHeader = new photograph_header(photographer).render();
         
-        main.append(photographerHeader, priceCard);
-        main.after(dropDown);
-        main.after(contactModal);
+        main.append(photographerHeader, priceCard, contactModal, dropDown);
+
 
 };
 
@@ -56,8 +55,7 @@ async function init() {
     displayData(photographer);
     displayMedia(photographerMedia, photographer.name);
     const lightBox = new lightbox().render();
-   // console.log(lightBox.render());
-   // document.body.appendChild(lightBox)
+
 };
 
 init();

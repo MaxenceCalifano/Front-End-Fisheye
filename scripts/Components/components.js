@@ -127,12 +127,9 @@ class dropdown {
         option3.setAttribute('value', 'titre');
         option3.textContent = "Titre";
 
-        select.appendChild(option1);
-        select.appendChild(option2);
-        select.appendChild(option3);
+        select.append(option1, option2, option3);
 
-        dropdown.appendChild(label);
-        dropdown.appendChild(select);
+        dropdown.append(label, select);
 
         return dropdown;
     }
@@ -170,8 +167,8 @@ class contact_modal {
         })
         img.setAttribute('tabindex', 0);
 
-        header.appendChild(h1);
-        header.appendChild(img);
+        header.append(h1, img);
+       
         modal.appendChild(header);
 
         // FORM
@@ -193,9 +190,7 @@ class contact_modal {
         firstNameErrorMessage.setAttribute('class', 'error');
         firstNameErrorMessage.setAttribute('aria-live', 'polite');
 
-        form.appendChild(firstNameLabel);
-        form.appendChild(firstNameInput);
-        form.appendChild(firstNameErrorMessage);
+        form.append(firstNameLabel, firstNameInput, firstNameErrorMessage);
         
         // LAST NAME
         const lastNameLabel = document.createElement('label');
@@ -211,9 +206,9 @@ class contact_modal {
         const lastNameErrorMessage =  document.createElement('span');
         lastNameErrorMessage.setAttribute('class', 'error');
         lastNameErrorMessage.setAttribute('aria-live', 'polite');
-        form.appendChild(lastNameLabel);
-        form.appendChild(lastNameInput);
-        form.appendChild(lastNameErrorMessage);
+
+        form.append(lastNameLabel, lastNameInput, lastNameErrorMessage);
+       
 
         // EMAIL
         const emailLabel = document.createElement('label');
@@ -228,9 +223,8 @@ class contact_modal {
         const emailErrorMessage =  document.createElement('span');
         emailErrorMessage.setAttribute('class', 'error');
         emailErrorMessage.setAttribute('aria-live', 'polite');
-        form.appendChild(emailLabel);
-        form.appendChild(emailInput);
-        form.appendChild(emailErrorMessage);
+
+        form.append(emailLabel, emailInput, emailErrorMessage);
 
         // MESSAGE
         const messageLabel = document.createElement('label');
@@ -245,9 +239,8 @@ class contact_modal {
         const messageErrorMessage =  document.createElement('span');
         messageErrorMessage.setAttribute('class', 'error');
         messageErrorMessage.setAttribute('aria-live', 'polite');
-        form.appendChild(messageLabel);
-        form.appendChild(messageInput);
-        form.appendChild(messageErrorMessage);
+        
+        form.append(messageLabel, messageInput, messageErrorMessage);
 
         // Button
         const button = document.createElement('button');
