@@ -21,8 +21,8 @@ async function getPhotographer() {
         const header = document.querySelector("header");
         const fishEyeLogo = new logo().render();
         header.insertAdjacentElement('afterbegin',fishEyeLogo);
+        
         const main = document.querySelector("main"); 
-        //const photographerModel = photographerFactory(photographer, 'photographerPage');
 
         const priceCard = new price_card(photographer.price).render();
         const dropDown = new dropdown().render();
@@ -57,8 +57,7 @@ async function init() {
    //console.log(photographer)
     displayData(photographer);
     displayMedia(photographerMedia, photographer.name);
-    const lightBox = new lightbox().render();
-
+    const lightBox = new lightbox().render(); // Elle s'append elle meme dans la class, à modifier
 };
 
 init();
