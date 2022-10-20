@@ -46,7 +46,9 @@ async function displayMedia(photographerMedia, name) {
     photographerMedia.forEach( media => {
         const mediaModel = mediafactory(media, firstName);
         const imageCard = mediaModel.getImageCard();
-        mediaSection.appendChild(imageCard);
+        const captionAndLikes = new caption_and_likes(media.likes, media.title).render();
+        imageCard.insertAdjacentElement('beforeend', captionAndLikes)
+        mediaSection.append(imageCard);
     })
 }
 

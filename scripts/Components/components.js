@@ -444,23 +444,11 @@ class image_thumbnail {
 
             const imageWrapper = document.createElement('figure');
 
-            const captionAndLikesFlexDiv = document.createElement('div');
-            captionAndLikesFlexDiv.className = "captionAndLikes"
-
-
-            const imageCaption = document.createElement('figcaption');
-            imageCaption.textContent = this._media.title;
-
-            const likesComponent = new likes(this._media.likes).createLikesComponent();
-
             const image = document.createElement('img');
             image.setAttribute('src', `../../assets/images/Sample Photos/${this._name}/${this._media.image}`);
             image.alt = this._media.title;
 
             imageWrapper.appendChild(image);
-
-            captionAndLikesFlexDiv.append(imageCaption, likesComponent);
-            imageWrapper.appendChild(captionAndLikesFlexDiv);
 
             imageLink.appendChild(imageWrapper);
 
@@ -479,16 +467,6 @@ class video_thumbnail {
 
         const videoWrapper = document.createElement('figure');
 
-        const captionAndLikesFlexDiv = document.createElement('div');
-        captionAndLikesFlexDiv.className = "captionAndLikes";
-
-        const likesComponent = new likes(this._media.likes).createLikesComponent();
-
-
-        const videoCaption = document.createElement('figcaption');
-        videoCaption.textContent = this._media.title;
-
-
         const video = document.createElement("video");
         const source = document.createElement("source");
 
@@ -501,13 +479,30 @@ class video_thumbnail {
         video.addEventListener('pause', (e) => video.setAttribute('aria-label', 'la vidéo est en pause'));
         video.addEventListener('ended', (e) => video.setAttribute('aria-label', 'la vidéo est arrétée car la lecture a atteint la fin'));
 
-
         videoWrapper.appendChild(video);
-        captionAndLikesFlexDiv.append(videoCaption, likesComponent);
-        
-        videoWrapper.appendChild(captionAndLikesFlexDiv);
+      
         videoLink.appendChild(videoWrapper);
 
         return videoLink;
+    }
+}
+
+
+class caption_and_likes {
+    constructor(likes, title) {
+        this._likes = likes;
+        this._title = title;
+    }
+    render() {
+        const captionAndLikesFlexDiv = document.createElement('div');
+        captionAndLikesFlexDiv.className = "captionAndLikes";
+
+        const likesComponent = new likes(this._likes).createLikesComponent();
+        const caption = document.createElement('figcaption');
+        caption.textContent = this._title;
+
+        captionAndLikesFlexDiv.append(caption, likesComponent);
+
+        return captionAndLikesFlexDiv;
     }
 }
