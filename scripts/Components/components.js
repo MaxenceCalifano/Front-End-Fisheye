@@ -48,10 +48,8 @@ class photographer_profile {
     locationP.textContent = `${this._city}, ${this._country}`;
     tagline.textContent = this._tagline;
 
-    photographerDiv.appendChild(h1);
-    photographerDiv.appendChild(locationP);
-    photographerDiv.appendChild(tagline);
-
+    photographerDiv.append(h1, locationP, tagline);
+    
     return  photographerDiv;
     }
 }
@@ -432,5 +430,84 @@ class userCard {
             article.append(p, taglineText, priceText);
            
             return article;
+    }
+}
+
+class image_thumbnail {
+    constructor(media, name) {
+        this._media = media;
+        this._name = name;
+    }
+    render() {
+            const imageLink = document.createElement('a');
+            imageLink.href = "#";
+
+            const imageWrapper = document.createElement('figure');
+
+            const captionAndLikesFlexDiv = document.createElement('div');
+            captionAndLikesFlexDiv.className = "captionAndLikes"
+
+
+            const imageCaption = document.createElement('figcaption');
+            imageCaption.textContent = this._media.title;
+
+            const likesComponent = new likes(this._media.likes).createLikesComponent();
+
+            const image = document.createElement('img');
+            image.setAttribute('src', `../../assets/images/Sample Photos/${this._name}/${this._media.image}`);
+            image.alt = this._media.title;
+
+            imageWrapper.appendChild(image);
+
+            captionAndLikesFlexDiv.append(imageCaption, likesComponent);
+            imageWrapper.appendChild(captionAndLikesFlexDiv);
+
+            imageLink.appendChild(imageWrapper);
+
+            return imageLink;
+    }
+}
+
+class video_thumbnail {
+    constructor(media, name) {
+        this._media = media;
+        this._name = name;
+    }
+    render() {
+        const videoLink = document.createElement('a');
+        videoLink.href = "#";
+
+        const videoWrapper = document.createElement('figure');
+
+        const captionAndLikesFlexDiv = document.createElement('div');
+        captionAndLikesFlexDiv.className = "captionAndLikes";
+
+        const likesComponent = new likes(this._media.likes).createLikesComponent();
+
+
+        const videoCaption = document.createElement('figcaption');
+        videoCaption.textContent = this._media.title;
+
+
+        const video = document.createElement("video");
+        const source = document.createElement("source");
+
+        source.setAttribute('src', `../../assets/images/Sample Photos/${this._name}/${this._media.video}`);
+        video.setAttribute('aria-label', "la lecture de la vidéo n'est pas lancée");
+        video.setAttribute('controls', true)
+
+        video.appendChild(source);
+        video.addEventListener('play', (e) => video.setAttribute('aria-label', 'la vidéo est en cours de lecture'));
+        video.addEventListener('pause', (e) => video.setAttribute('aria-label', 'la vidéo est en pause'));
+        video.addEventListener('ended', (e) => video.setAttribute('aria-label', 'la vidéo est arrétée car la lecture a atteint la fin'));
+
+
+        videoWrapper.appendChild(video);
+        captionAndLikesFlexDiv.append(videoCaption, likesComponent);
+        
+        videoWrapper.appendChild(captionAndLikesFlexDiv);
+        videoLink.appendChild(videoWrapper);
+
+        return videoLink;
     }
 }
