@@ -1,4 +1,4 @@
-class logo {
+/* class logo {
     render() {
         const homeLink = document.createElement('a');
         homeLink.setAttribute('href', 'index.html');
@@ -12,9 +12,9 @@ class logo {
 
         return homeLink;
     }
-}
+} */
 
-class user {
+/* class user {
     constructor(picture) {
         this._picture = picture;
     }
@@ -27,9 +27,9 @@ class user {
 
         return img;
     }
-}
+} */
 
-class photographer_profile {
+/* class photographer_profile {
     constructor(data) {
         this._name = data.name;
         this._city = data.city;
@@ -52,9 +52,9 @@ class photographer_profile {
     
     return  photographerDiv;
     }
-}
+} */
 
-class contact_button {
+/* class contact_button {
     createButton() {
         const button = document.createElement('button');
         button.classList.add('contact_button');
@@ -63,9 +63,9 @@ class contact_button {
         // '<button class="contact_button" onclick="displayModal()">Contactez-moi</button>';
         return button;
     }
-}
+} */
 
-class photograph_header {
+/* class photograph_header {
     constructor(data) {
         this._data = data
         this._image = `assets/photographers/Photographers ID Photos/${data.portrait}`
@@ -82,22 +82,9 @@ class photograph_header {
 
         return photographerHeaderContainer
     }
-}
-class price_card {
-    constructor(price) {
-        this._price = price;
-    }
-    render() {
-        const priceCard = document.createElement('div');
-        priceCard.className = 'priceCard';
-        const priceHolder = document.createElement('p');
-        priceHolder.textContent = `${this._price}€ / jour`;
-        priceCard.appendChild(priceHolder);
-        return priceCard;
-    }
-}
+} */
 
-class likes {
+/* class likes {
     constructor(likes) {
         this._likes = likes;
     }
@@ -113,9 +100,9 @@ class likes {
 
         return likes;
     }
-}
+} */
 
-class dropdown {
+/* class dropdown {
     render() {
 
         const dropdown = document.createElement('div');
@@ -147,9 +134,9 @@ class dropdown {
 
         return dropdown;
     }
-}
+} */
 
-class contact_modal {
+/* class contact_modal {
     constructor(name) {
         this._name = name;
     }
@@ -302,9 +289,9 @@ class contact_modal {
 
         return contactModal;
     }
-}
+} */
 
-class lightbox {
+/*class lightbox {
     constructor() {
         this.links = Array.from(document.querySelectorAll('.thumbs_gallery a figure > :first-child'));
         this.currentElement = "";
@@ -333,8 +320,7 @@ class lightbox {
            this.currentElement = this.links[this.links.indexOf(this.currentElement) +1]
          }
            console.log(this.currentElement);
-          /*  img.setAttribute('src', element.src);
-           img.setAttribute('alt', element.alt); */
+          
            
         })
         return nextButton;
@@ -392,8 +378,8 @@ class lightbox {
        this.getLinks();
     }
 }
-
-class userCard {
+*/
+/* class userCard {
     constructor(data) {
         this._name = data.name;
         this._city = data.city;
@@ -431,9 +417,9 @@ class userCard {
            
             return article;
     }
-}
+} */
 
-class image_thumbnail {
+/* class image_thumbnail {
     constructor(media, name) {
         this._media = media;
         this._name = name;
@@ -454,7 +440,7 @@ class image_thumbnail {
 
             return imageLink;
     }
-}
+} */
 
 class video_thumbnail {
     constructor(media, name) {
@@ -488,7 +474,7 @@ class video_thumbnail {
 }
 
 
-class caption_and_likes {
+/* class caption_and_likes {
     constructor(likes, title) {
         this._likes = likes;
         this._title = title;
@@ -505,4 +491,4 @@ class caption_and_likes {
 
         return captionAndLikesFlexDiv;
     }
-}
+} */

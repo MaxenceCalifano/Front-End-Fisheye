@@ -1,3 +1,6 @@
+import { logo } from '../Components/Logo.js';
+import { photographerFactory } from '../factories/photographerFactory.js';
+
 async function getPhotographers() {
     // Penser à remplacer par les données récupérées dans le json
     let photographers;

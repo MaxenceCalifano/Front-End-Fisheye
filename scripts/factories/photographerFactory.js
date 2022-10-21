@@ -1,4 +1,4 @@
-//import { user } from '../Components/User'
+import { userCard } from '../Components/UserCard.js';
 
 function photographerFactory(data) {
     const { name } = data;
@@ -10,3 +10,5 @@ function photographerFactory(data) {
      
     return { name, getUserCardDOM }
 }
+
+export { photographerFactory }

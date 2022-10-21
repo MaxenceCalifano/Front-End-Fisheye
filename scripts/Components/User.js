@@ -1,4 +1,4 @@
-/* class user {
+class user {
     constructor(picture) {
         this._picture = picture;
     }
@@ -13,4 +13,4 @@
     }
 }
 
-export {user} */
+export { user }

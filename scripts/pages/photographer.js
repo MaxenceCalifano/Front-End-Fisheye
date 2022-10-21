@@ -1,3 +1,13 @@
+import { price_card } from '../Components/PriceCard.js';
+import { photograph_header} from '../Components/Photograph_Header.js';
+import { logo } from '../Components/Logo.js';
+import { dropdown } from '../Components/Dropdown.js';
+import { contact_modal } from '../Components/ContactModal.js';
+import { lightbox } from '../Components/Lightbox.js';
+import { caption_and_likes } from '../Components/Caption_and_likes.js';
+
+import { mediaFactory } from '../factories/mediaFactory.js';
+
 async function getPhotographer() {
     let url = new URL(window.location);
     const photographerID = url.searchParams.get("id")
@@ -44,7 +54,7 @@ async function displayMedia(photographerMedia, name) {
     main.appendChild(mediaSection);
 
     photographerMedia.forEach( media => {
-        const mediaModel = mediafactory(media, firstName);
+        const mediaModel = mediaFactory(media, firstName);
         const imageCard = mediaModel.getImageCard();
         const captionAndLikes = new caption_and_likes(media.likes, media.title).render();
         imageCard.insertAdjacentElement('beforeend', captionAndLikes)

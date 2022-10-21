@@ -1,4 +1,6 @@
-function mediafactory(media, name) {
+import { image_thumbnail } from '../Components/ImageThumbnail.js';
+
+function mediaFactory(media, name) {
     //if l'objet a une propriété image ou vidéo
     if(media.image) {
         function getImageCard() {
@@ -8,7 +10,7 @@ function mediafactory(media, name) {
         }
     } else if(media.video) {
         function getImageCard() {
-           const videoThumbnail = new video_thumbnail(media, name).render();
+            const videoThumbnail = new video_thumbnail(media, name).render();
             return videoThumbnail;
         }
     } else {
@@ -17,3 +19,5 @@ function mediafactory(media, name) {
     
     return {getImageCard};
 }
+
+export { mediaFactory };
