@@ -1,23 +1,20 @@
-import { image_thumbnail } from '../Components/ImageThumbnail.js';
+ import { image_thumbnail } from '../Components/ImageThumbnail.js';
+ import { video_thumbnail } from '../Components/VideoThumbnail.js';
+class mediaFactory {
+    constructor(media, name) {
+        this._media = media;
+        this._name = name;
 
-function mediaFactory(media, name) {
-    //if l'objet a une propriété image ou vidéo
-    if(media.image) {
-        function getImageCard() {
-
-            const imageThumbnail = new image_thumbnail(media, name).render()
-            return imageThumbnail;
+        if(this._media.image) {  
+                const imageThumbnail = new image_thumbnail(this._media, this._name).render()
+                return imageThumbnail;
+        } else if(this._media.video) {
+                const videoThumbnail = new video_thumbnail(this._media, this._name).render();
+                return videoThumbnail;
+        } else {
+           return console.error("No file to display");
         }
-    } else if(media.video) {
-        function getImageCard() {
-            const videoThumbnail = new video_thumbnail(media, name).render();
-            return videoThumbnail;
-        }
-    } else {
-        console.error("No file to display");
     }
-    
-    return {getImageCard};
 }
 
-export { mediaFactory };
+export { mediaFactory }

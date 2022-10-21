@@ -442,7 +442,7 @@
     }
 } */
 
-class video_thumbnail {
+/* class video_thumbnail {
     constructor(media, name) {
         this._media = media;
         this._name = name;
@@ -471,7 +471,7 @@ class video_thumbnail {
 
         return videoLink;
     }
-}
+} */
 
 
 /* class caption_and_likes {
