@@ -1,20 +1,21 @@
+import { mediaFactory } from "../factories/mediaFactory.js";
+
 class lightbox {
     constructor() {
         this.links = Array.from(document.querySelectorAll('.thumbs_gallery a figure > :first-child'));
         this.currentElement = "";
-    }
 
-    getLinks() {
         this.links.forEach((element) => {
-            element.addEventListener('click', (event) => {
-                event.preventDefault();
-                this.currentElement = element;
-                this.createLightBox(element);
-            })  
-        } );
-        //return this.links;
+          element.addEventListener('click', (event) => {
+              event.preventDefault();
+              this.currentElement = element;
+              this.createLightBox(element);
+          })  
+      } );
+      return  
     }
 
+    
     next() {
         //Next
         const nextButton = document.createElement('button');
@@ -67,23 +68,24 @@ class lightbox {
          // Create component
          const imageContainer = document.createElement('div');
          imageContainer.setAttribute('class', 'imageContainer');
-         const img = document.createElement('img');
-         img.setAttribute('src', element.src);
-         img.setAttribute('alt', element.alt);
 
-         //imageContainer.innerHTML = `${this.currentElement}`
-         imageContainer.appendChild(img);
+          this.links.forEach( media => {
+          console.log(media)
+          imageContainer.insertAdjacentHTML('beforeend',media.outerHTML)
+         })
  
          lightbox.appendChild(prevButton);
          lightbox.appendChild(nextButton);
          lightbox.appendChild(closeButton);
          lightbox.appendChild(imageContainer);
-         document.body.appendChild(lightbox)
-        // return lightbox;
+         console.log(lightbox)
+         const main = document.querySelector('main');
+         main.appendChild(lightbox);
+          return lightbox;
     }
 
-    render() {
+   /*  render() {
        this.getLinks();
-    }
+    } */
 }
 export { lightbox };

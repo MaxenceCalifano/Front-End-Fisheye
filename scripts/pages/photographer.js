@@ -68,7 +68,10 @@ async function init() {
    //console.log(photographer)
     displayData(photographer);
     displayMedia(photographerMedia, photographer.name);
-    const lightBox = new lightbox().render(); // Elle s'append elle meme dans la class, à modifier
+    new lightbox();
+    //console.log(lightBox)
+    const main = document.querySelector('main');
+   // main.appendChild(lightBox);
 };
 
 init();
