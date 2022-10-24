@@ -68,10 +68,10 @@ async function init() {
    //console.log(photographer)
     displayData(photographer);
     displayMedia(photographerMedia, photographer.name);
-    new lightbox();
-    //console.log(lightBox)
+     const lightBox = new lightbox();
+    /*console.log(lightBox)
     const main = document.querySelector('main');
-   // main.appendChild(lightBox);
+    main.appendChild(lightBox); */
 };
 
 init();

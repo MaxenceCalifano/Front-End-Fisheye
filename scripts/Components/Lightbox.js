@@ -1,36 +1,34 @@
-import { mediaFactory } from "../factories/mediaFactory.js";
-
 class lightbox {
     constructor() {
         this.links = Array.from(document.querySelectorAll('.thumbs_gallery a figure > :first-child'));
-        this.currentElement = "";
+        this.currentElementIndex;
+       
+        this.firstElement;
 
         this.links.forEach((element) => {
           element.addEventListener('click', (event) => {
               event.preventDefault();
-              this.currentElement = element;
-              this.createLightBox(element);
+              this.currentElementIndex = this.links.indexOf(element);
+              this.lightbox = this.createLightBox();
           })  
       } );
-      return  
+
     }
 
-    
     next() {
         //Next
         const nextButton = document.createElement('button');
         nextButton.textContent = "Suivant";
         nextButton.setAttribute('class', 'nextButton');
         nextButton.addEventListener('click', () => {
-         if(this.links.indexOf(this.currentElement) === this.links.length - 1) {
-           this.currentElement = this.links[0]
+
+         if(this.currentElementIndex < this.links.length-1) {
+          this.currentElementIndex++;
+          this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}vw`;
          } else {
-           this.currentElement = this.links[this.links.indexOf(this.currentElement) +1]
+          this.currentElementIndex = 0;
+          this.firstElement.style.marginLeft = 0;
          }
-           console.log(this.currentElement);
-          /*  img.setAttribute('src', element.src);
-           img.setAttribute('alt', element.alt); */
-           
         })
         return nextButton;
     }
@@ -39,20 +37,26 @@ class lightbox {
         prevButton.setAttribute('class', 'prevButton');
         prevButton.textContent = "Précedent";
         prevButton.addEventListener('click', () => {
-           if(this.links.indexOf(this.currentElement) === 0) {
-               this.currentElement = this.links[this.links.length - 1]
-             } else {
-               this.currentElement = this.links[this.links.indexOf(this.currentElement) -1]
-             }
-           console.log(this.links.indexOf(element));
-           img.setAttribute('src', this.currentElement.src);
-           img.setAttribute('alt', this.currentElement.alt);
+
+           if(this.currentElementIndex > 0) {
+            this.currentElementIndex--;
+            this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}vw`;
+            console.log(this.currentElementIndex * -100)
+           } else {
+            // Go to last image
+            this.currentElementIndex = this.links.length-1;
+            this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}vw`;
+           }
+           
+             console.log(this.currentElementIndex);
+             console.log(this.links.length-1);
         })
         return prevButton;
     }
-    createLightBox(element) {
-        console.log(this.links.indexOf(element)) // Donne l'index de l'image
+    createLightBox() {
+
          // BUTTONS
+
          const lightbox = document.createElement('div');
          lightbox.classList.add("lightbox");
          
@@ -70,22 +74,22 @@ class lightbox {
          imageContainer.setAttribute('class', 'imageContainer');
 
           this.links.forEach( media => {
-          console.log(media)
-          imageContainer.insertAdjacentHTML('beforeend',media.outerHTML)
-         })
- 
+          const container = document.createElement('div');
+          container.insertAdjacentHTML('beforeend',media.outerHTML);
+          imageContainer.appendChild(container)
+         }) 
+
          lightbox.appendChild(prevButton);
          lightbox.appendChild(nextButton);
          lightbox.appendChild(closeButton);
          lightbox.appendChild(imageContainer);
-         console.log(lightbox)
          const main = document.querySelector('main');
          main.appendChild(lightbox);
-          return lightbox;
-    }
 
-   /*  render() {
-       this.getLinks();
-    } */
+         this.firstElement = document.querySelector('.imageContainer div:first-child');
+         this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}vw`;
+
+         return lightbox;
+    }
 }
 export { lightbox };

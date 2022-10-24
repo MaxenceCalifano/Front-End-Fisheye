@@ -46,11 +46,16 @@
 .imageContainer {
     display: flex;
     align-items: center;
-    justify-content: center;
     min-height: 100%;
-    margin: 0 50px;
 }
 
-.imageContainer img {
+.imageContainer div {
+    display: flex;
     max-height: 100vh;
+    padding: 0 10%;
+}
+
+.imageContainer div>* {
+    object-fit: contain;
+    width: 80vw;
 }
