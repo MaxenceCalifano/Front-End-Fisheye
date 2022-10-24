@@ -43,6 +43,12 @@
     right: 10px;
 }
 
+.containerBorder {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
 .imageContainer {
     display: flex;
     align-items: center;
@@ -52,10 +58,9 @@
 .imageContainer div {
     display: flex;
     max-height: 100vh;
-    padding: 0 10%;
 }
 
 .imageContainer div>* {
     object-fit: contain;
-    width: 80vw;
+    width: 100vw;
 }

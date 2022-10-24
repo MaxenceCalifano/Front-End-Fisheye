@@ -91,7 +91,10 @@ class lightbox {
          lightbox.appendChild(prevButton);
          lightbox.appendChild(nextButton);
          lightbox.appendChild(closeButton);
-         lightbox.appendChild(imageContainer);
+         const containerBorder = document.createElement('div');
+         containerBorder.setAttribute('class', 'containerBorder');
+         containerBorder.appendChild(imageContainer);
+         lightbox.appendChild(containerBorder);
          const main = document.querySelector('main');
          main.appendChild(lightbox);
 
