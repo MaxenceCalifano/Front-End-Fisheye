@@ -10,23 +10,29 @@ function displayModal() {
 }
 
 function closeModal() {
-    
-    const modal = document.getElementById("contact_modal");
+    const isModalOpen = body.getAttribute('aria-hidden');
+    if(isModalOpen !== 'true') {
+      return
+    } else {
+      const modal = document.getElementById("contact_modal");
 
-    modal.setAttribute("closing", "");
+      modal.setAttribute("closing", "");
   
-    modal.addEventListener("animationend", () => {
+      modal.addEventListener("animationend", () => {
       modal.removeAttribute("closing");
       modal.style.display= "none";
     }, {once: true})
+
     body.setAttribute("aria-hidden", false);
+    }
+    
 
 }
 
 document.addEventListener('keydown', (event) =>{
-  const isModalOpen = body.getAttribute('aria-hidden'); 
-  if(event.key === 'Escape' && isModalOpen === 'true'){
-    console.log('test')
+   
+  if(event.key === 'Escape'){
       closeModal();
+      document.removeEventListener('keydown', closeModal())
   }
 })
