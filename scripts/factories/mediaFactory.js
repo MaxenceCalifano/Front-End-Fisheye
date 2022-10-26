@@ -8,12 +8,12 @@ class mediaFactory {
         if(this._media.image) {  
                 const imageThumbnail = new image_thumbnail(this._media, this._name).render()
                 return imageThumbnail;
-        } else if(this._media.video) {
+        } if(this._media.video) {
                 const videoThumbnail = new video_thumbnail(this._media, this._name).render();
                 return videoThumbnail;
-        } else {
-           return console.error("No file to display");
         }
+
+        return console.error("No file to display");
     }
 }
 

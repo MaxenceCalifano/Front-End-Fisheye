@@ -8,6 +8,7 @@ import { caption_and_likes } from '../Components/Caption_and_likes.js';
 
 import { mediaFactory } from '../factories/mediaFactory.js';
 
+
 async function getPhotographer() {
     let url = new URL(window.location);
     const photographerID = url.searchParams.get("id")
@@ -27,14 +28,14 @@ async function getPhotographer() {
 }
 
     
- function displayData(photographer) {
+ function displayData(photographer, totalLikes) {
         const header = document.querySelector("header");
         const fishEyeLogo = new logo().render();
         header.insertAdjacentElement('afterbegin',fishEyeLogo);
         
         const main = document.querySelector("main"); 
 
-        const priceCard = new price_card(photographer.price).render();
+        const priceCard = new price_card(photographer.price, totalLikes).render();
         const dropDown = new dropdown().render();
         const contactModal = new contact_modal(photographer.name).render();
 
@@ -54,24 +55,27 @@ async function displayMedia(photographerMedia, name) {
     main.appendChild(mediaSection);
 
     photographerMedia.forEach( media => {
+        const mediaWrapper = document.createElement('div');
         const imageCard = new mediaFactory(media, firstName);
         const captionAndLikes = new caption_and_likes(media.likes, media.title).render();
-        imageCard.insertAdjacentElement('beforeend', captionAndLikes)
-        mediaSection.append(imageCard);
+        mediaWrapper.append(imageCard, captionAndLikes)
+        
+        mediaSection.appendChild(mediaWrapper);
     })
 }
 
 async function init() {
     // Récupère les datas des photographes
+
     const { photographer } = await getPhotographer();
     const { photographerMedia } = await getPhotographer();
-   //console.log(photographer)
-    displayData(photographer);
+
+    let totalLikes = 0;
+    photographerMedia.forEach( media => totalLikes += media.likes)
+
+    displayData(photographer, totalLikes);
     displayMedia(photographerMedia, photographer.name);
-     const lightBox = new lightbox();
-    /*console.log(lightBox)
-    const main = document.querySelector('main');
-    main.appendChild(lightBox); */
+    const lightBox = new lightbox();
 };
 
 init();

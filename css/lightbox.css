@@ -44,11 +44,9 @@
 }
 
 .containerBorder {
-    width: 90%;
+    width: 700px;
     margin: auto;
     overflow: hidden;
-    position: absolute;
-    z-index: -2;
 }
 
 .imageContainer {
@@ -61,10 +59,11 @@
     display: flex;
     max-height: 100vh;
     transition: all ease-in-out 0.3s;
-
+    flex-shrink: 0;
+    width: 100%;
 }
 
 .imageContainer div>* {
     object-fit: contain;
-    width: 100vw;
+    width: 100%;
 }

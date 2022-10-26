@@ -24,7 +24,7 @@ class lightbox {
     next() {
       if(this.currentElementIndex < this.links.length-1) {
         this.currentElementIndex++;
-        this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}vw`;
+        this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}%`;
        } else {
         this.currentElementIndex = 0;
         this.firstElement.style.marginLeft = 0;
@@ -33,12 +33,12 @@ class lightbox {
     prev() {
       if(this.currentElementIndex > 0) {
         this.currentElementIndex--;
-        this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}vw`;
+        this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}%`;
        
        } else {
         // Go to last image
         this.currentElementIndex = this.links.length-1;
-        this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}vw`;
+        this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}%`;
        }
     } 
     
@@ -99,7 +99,7 @@ class lightbox {
          main.appendChild(lightbox);
 
          this.firstElement = document.querySelector('.imageContainer div:first-child');
-         this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}vw`;
+         this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}%`;
 
          closeButton.focus();
          lightbox.addEventListener('keydown', (event) => {
