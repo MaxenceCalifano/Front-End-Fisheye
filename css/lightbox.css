@@ -47,6 +47,8 @@
     width: 90%;
     margin: auto;
     overflow: hidden;
+    position: absolute;
+    z-index: -2;
 }
 
 .imageContainer {
@@ -58,6 +60,8 @@
 .imageContainer div {
     display: flex;
     max-height: 100vh;
+    transition: all ease-in-out 0.3s;
+
 }
 
 .imageContainer div>* {
