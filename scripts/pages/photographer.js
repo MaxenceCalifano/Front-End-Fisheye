@@ -5,6 +5,8 @@ import { dropdown } from '../Components/Dropdown.js';
 import { contact_modal } from '../Components/ContactModal.js';
 import { lightbox } from '../Components/Lightbox.js';
 import { caption_and_likes } from '../Components/Caption_and_likes.js';
+import { TotalLikes } from '../Components/TotalLikes.js'
+
 
 import { mediaFactory } from '../factories/mediaFactory.js';
 
@@ -46,7 +48,7 @@ async function getPhotographer() {
 
 };
 
-async function displayMedia(photographerMedia, name) {
+async function displayMedia(photographerMedia, name, totalLikes) {
     const firstName = name.split(' ')[0].replace('-', ' ');
 
     const main = document.querySelector('main');
@@ -57,7 +59,7 @@ async function displayMedia(photographerMedia, name) {
     photographerMedia.forEach( media => {
         const mediaWrapper = document.createElement('div');
         const imageCard = new mediaFactory(media, firstName);
-        const captionAndLikes = new caption_and_likes(media.likes, media.title).render();
+        const captionAndLikes = new caption_and_likes(media.likes, media.title, totalLikes).render();
         mediaWrapper.append(imageCard, captionAndLikes)
         
         mediaSection.appendChild(mediaWrapper);
@@ -70,11 +72,13 @@ async function init() {
     const { photographer } = await getPhotographer();
     const { photographerMedia } = await getPhotographer();
 
-    let totalLikes = 0;
-    photographerMedia.forEach( media => totalLikes += media.likes)
+    let total = 0;
+    photographerMedia.forEach( media => total += media.likes)
+    const totalLikes = new TotalLikes(total);
+    console.log(totalLikes)
 
     displayData(photographer, totalLikes);
-    displayMedia(photographerMedia, photographer.name);
+    displayMedia(photographerMedia, photographer.name, totalLikes);
     const lightBox = new lightbox();
 };
 
