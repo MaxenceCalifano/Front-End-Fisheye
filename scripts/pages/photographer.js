@@ -79,6 +79,8 @@ async function getPhotographer() {
                 const imageCard = new mediaFactory(media, firstName);
                 const captionAndLikes = new caption_and_likes(media.likes, media.title, totalLikes).render();
                 mediaWrapper.append(imageCard, captionAndLikes)
+                
+                // Storing corresponding element in the array
                 media.HTMLElement = mediaWrapper;
                 thumbsGallery.appendChild(mediaWrapper);
             })
