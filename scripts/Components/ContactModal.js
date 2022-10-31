@@ -54,7 +54,10 @@ class contact_modal {
         firstNameErrorMessage.setAttribute('class', 'error');
         firstNameErrorMessage.setAttribute('aria-live', 'polite');
 
-        form.append(firstNameLabel, firstNameInput, firstNameErrorMessage);
+        const firstName = document.createElement('div');
+        firstName.className = "input";
+        firstName.append(firstNameLabel, firstNameInput, firstNameErrorMessage);
+        form.appendChild(firstName);  
         
         // LAST NAME
         const lastNameLabel = document.createElement('label');
@@ -72,8 +75,10 @@ class contact_modal {
         lastNameErrorMessage.setAttribute('class', 'error');
         lastNameErrorMessage.setAttribute('aria-live', 'polite');
 
-        form.append(lastNameLabel, lastNameInput, lastNameErrorMessage);
-       
+        const lastName = document.createElement('div');
+        lastName.className = "input";
+        lastName.append(lastNameLabel, lastNameInput, lastNameErrorMessage);
+        form.appendChild(lastName);     
 
         // EMAIL
         const emailLabel = document.createElement('label');
@@ -90,7 +95,10 @@ class contact_modal {
         emailErrorMessage.setAttribute('class', 'error');
         emailErrorMessage.setAttribute('aria-live', 'polite');
 
-        form.append(emailLabel, emailInput, emailErrorMessage);
+        const email = document.createElement('div');
+        email.className = "input";
+        email.append(emailLabel, emailInput, emailErrorMessage);
+        form.appendChild(email);
 
         // MESSAGE
         const messageLabel = document.createElement('label');
@@ -107,7 +115,11 @@ class contact_modal {
         messageErrorMessage.setAttribute('class', 'error');
         messageErrorMessage.setAttribute('aria-live', 'polite');
 
-        form.append(messageLabel, messageInput, messageErrorMessage);
+        const message = document.createElement('div');
+        message.className = "input";
+
+        message.append(messageLabel, messageInput, messageErrorMessage);
+        form.appendChild(message);
 
         // Button
         const button = document.createElement('button');

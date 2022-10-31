@@ -5,7 +5,6 @@
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -29,7 +28,7 @@
     border-radius: 5px 5px 0 0;
     padding: 0 10px;
     font-weight: 500;
-    z-index: 2;
+    z-index: 1;
     display: flex;
     align-items: center;
 }
@@ -37,14 +36,6 @@
 .priceCard>p {
     margin: 10px;
     font-weight: 600;
-}
-
-.dropdown_wrapper {
-    margin: 0 100px;
-}
-
-.thumbs_gallery {
-    margin: 20px 100px;
 }
 
 .thumbs_gallery {
@@ -153,8 +144,13 @@
     margin: 5px 0;
 }
 
+.dropdown_wrapper {
+    margin: 2% 0;
+}
+
 .dropdown_wrapper label {
     margin: 0 10px;
+    font-weight: bold;
 }
 
 .dropdown option:after {
