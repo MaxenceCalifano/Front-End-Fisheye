@@ -41,6 +41,12 @@ class lightbox {
         this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}%`;
        }
     } 
+
+    close(lightbox) {
+      lightbox.remove();
+      console.log('test2')
+      document.removeEventListener('keydown', this.close)
+    }
     
     nextButton() {
         //Next
@@ -102,13 +108,14 @@ class lightbox {
          this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}%`;
 
          closeButton.focus();
-         lightbox.addEventListener('keydown', (event) => {
+         document.addEventListener('keydown', function keyBoardEvent(event) {
           if(event.key === "ArrowLeft") {
             this.prev();
           } else if (event.key === "ArrowRight") {
             this.next()
           } else if (event.key === "Escape") {
-            lightbox.remove();
+            document.removeEventListener('keydown', keyBoardEvent)
+            lightbox.remove()
           }
         })
 

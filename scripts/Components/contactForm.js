@@ -5,11 +5,16 @@ function displayModal() {
     body.setAttribute("aria-hidden", true);
     const closeButton = document.querySelector(".modal header img");
     closeButton.focus();
+    document.addEventListener('keydown', function handleclose(event) {
+      closeModal(event);
+      document.removeEventListener('keydown', handleclose)
+    })
 	  modal.style.display = "block";
     modal.setAttribute("aria-hidden", false);
 }
 
-function closeModal() {
+function closeModal(event) {
+  if(event.key === 'Enter' || event.key === 'Escape'){
     const isModalOpen = body.getAttribute('aria-hidden');
     if(isModalOpen !== 'true') {
       return
@@ -22,17 +27,7 @@ function closeModal() {
       modal.removeAttribute("closing");
       modal.style.display= "none";
     }, {once: true})
-
     body.setAttribute("aria-hidden", false);
     }
-    
-
-}
-
-document.addEventListener('keydown', (event) =>{
-   
-  if(event.key === 'Escape'){
-      closeModal();
-      document.removeEventListener('keydown', closeModal())
   }
-})
+}
