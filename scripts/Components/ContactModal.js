@@ -19,18 +19,23 @@ class contact_modal {
         const h1 = document.createElement('h1');
         h1.setAttribute('id', 'contact_me');
         h1.textContent =  `Contactez-moi ${this._name}`;
+
+        const close = document.createElement('button');
+        close.textContent = "Fermer";
+
         const img = document.createElement('img');
-        img.setAttribute('src', '../../assets/icons/close.svg');
-        img.setAttribute('aria-label', 'Fermer le formulaire de contact');
-        img.setAttribute('onclick', 'closeModal()');
-        img.addEventListener('keydown', (event) =>{
+        img.setAttribute('src', '../../assets/icons/closeContact.svg');
+        close.setAttribute('aria-label', 'Fermer le formulaire de contact');
+        close.setAttribute('onclick', 'closeModal()');
+        close.addEventListener('keydown', (event) =>{
             if(event.key === 'Enter' || event.key === 'Escape'){
                 closeModal();
             }
         })
-        img.setAttribute('tabindex', 0);
 
-        header.append(h1, img);
+        close.appendChild(img);
+
+        header.append(h1, close);
        
         modal.appendChild(header);
 
