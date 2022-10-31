@@ -6,15 +6,15 @@ function displayModal() {
     const closeButton = document.querySelector(".modal header img");
     closeButton.focus();
     document.addEventListener('keydown', function handleclose(event) {
+      if(event.key === 'Enter' || event.key === 'Escape'){
       closeModal(event);
       document.removeEventListener('keydown', handleclose)
-    })
+ } })
 	  modal.style.display = "block";
     modal.setAttribute("aria-hidden", false);
 }
 
 function closeModal(event) {
-  if(event.key === 'Enter' || event.key === 'Escape'){
     const isModalOpen = body.getAttribute('aria-hidden');
     if(isModalOpen !== 'true') {
       return
@@ -25,9 +25,9 @@ function closeModal(event) {
   
       modal.addEventListener("animationend", () => {
       modal.removeAttribute("closing");
+      modal.setAttribute("aria-hidden", true);
       modal.style.display= "none";
     }, {once: true})
     body.setAttribute("aria-hidden", false);
     }
-  }
 }
