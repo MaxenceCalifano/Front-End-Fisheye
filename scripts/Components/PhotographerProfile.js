@@ -11,6 +11,7 @@ class photographer_profile {
 
     const h1 = document.createElement('h1');
     const locationP = document.createElement('p');
+    locationP.className = 'photographer_location';
     const tagline= document.createElement('p');
 
     h1.textContent = this._name;

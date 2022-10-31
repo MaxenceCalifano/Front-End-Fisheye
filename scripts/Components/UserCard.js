@@ -24,6 +24,7 @@ class userCard {
     
             const p = document.createElement("p");
             p.textContent = `${this._city}, ${this._country}`;
+            p.className = 'photographer_location';
     
             const taglineText = document.createElement("p");
             taglineText.textContent = this._tagline;

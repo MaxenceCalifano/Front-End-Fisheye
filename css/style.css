@@ -3,6 +3,7 @@
 
 :root {
     --primary-color: #901C1C;
+    --secondary-color: #D3573C;
 }
 
 body {
@@ -18,10 +19,19 @@ header {
     height: 90px;
 }
 
+header h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
 h1 {
-    color: #901C1C;
+    color: var(--secondary-color);
     margin-right: 100px;
     font-size: 64px;
+}
+
+h2 {
+    color: var(--secondary-color);
 }
 
 .logo {
@@ -69,16 +79,19 @@ h1 {
     object-fit: cover;
 }
 
-.photographer_section article :nth-child(2) {
-    color: #901C1C;
-    font-weight: 500;
-}
-
 .photographer_section article :nth-child(3) {
     text-align: center;
     font-weight: 500;
 }
 
-.photographer_section article :last-child {
+.photographer_section article>* {
+    margin: 5px;
+}
+
+.photographer_location {
+    color: var(--primary-color);
+}
+
+.photographer_section p:last-child {
     color: #757575;
 }

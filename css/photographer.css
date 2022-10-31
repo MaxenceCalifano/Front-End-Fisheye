@@ -9,17 +9,34 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding: 25px;
+    gap: 10px;
+}
+
+.photograph-header p:last-child {
+    color: #525252;
+}
+
+.photographer-profile>* {
+    margin: 10px 5px;
 }
 
 .priceCard {
     position: fixed;
     bottom: 0;
-    right: 0;
+    right: 20px;
     background-color: #DB8876;
     border-radius: 5px 5px 0 0;
     padding: 0 10px;
     font-weight: 500;
     z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.priceCard>p {
+    margin: 10px;
+    font-weight: 600;
 }
 
 .dropdown_wrapper {
@@ -33,7 +50,7 @@
 .thumbs_gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 40px;
     justify-content: space-between;
 }
 
@@ -50,6 +67,12 @@
     width: 350px;
     height: 300px;
     object-fit: cover;
+}
+
+.thumbs_gallery figcaption {
+    color: var(--primary-color);
+    margin: 5px 0;
+    font-weight: 600;
 }
 
 .likes {
@@ -106,6 +129,13 @@
 .heart:hover:before,
 .heart:hover:after {
     box-shadow: inset 0px 0px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.heart.priceCardHeart,
+.heart.priceCardHeart::before,
+.heart.priceCardHeart::after {
+    background-color: black;
+    cursor: auto;
 }
 
 .contact_button,
