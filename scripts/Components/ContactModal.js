@@ -27,11 +27,6 @@ class contact_modal {
         img.setAttribute('src', '../../assets/icons/closeContact.svg');
         close.setAttribute('aria-label', 'Fermer le formulaire de contact');
         close.setAttribute('onclick', 'closeModal()');
-        close.addEventListener('keydown', (event) =>{
-            if(event.key === 'Enter' || event.key === 'Escape'){
-                closeModal();
-            }
-        })
 
         close.appendChild(img);
 
