@@ -49,6 +49,7 @@ class contact_modal {
         firstNameInput.setAttribute('minlength', '2');
         firstNameInput.setAttribute('required', 'true');
         firstNameInput.setAttribute('aria-required', 'true');
+        firstNameInput.setAttribute('placeholder', 'Prénom');
         const firstNameErrorMessage =  document.createElement('span');
         firstNameErrorMessage.setAttribute('class', 'error');
         firstNameErrorMessage.setAttribute('aria-live', 'polite');
@@ -66,6 +67,7 @@ class contact_modal {
         lastNameInput.setAttribute('minlength', '2');
         lastNameInput.setAttribute('required', 'true');
         lastNameInput.setAttribute('aria-required', 'true');
+        lastNameInput.setAttribute('placeholder', 'Nom');
         const lastNameErrorMessage =  document.createElement('span');
         lastNameErrorMessage.setAttribute('class', 'error');
         lastNameErrorMessage.setAttribute('aria-live', 'polite');
@@ -83,6 +85,7 @@ class contact_modal {
         emailInput.setAttribute('type', 'email');
         emailInput.setAttribute('required', 'true');
         emailInput.setAttribute('aria-required', 'true');
+        emailInput.setAttribute('placeholder', 'Email');
         const emailErrorMessage =  document.createElement('span');
         emailErrorMessage.setAttribute('class', 'error');
         emailErrorMessage.setAttribute('aria-live', 'polite');
@@ -99,6 +102,7 @@ class contact_modal {
         messageInput.setAttribute('minlength', '20');
         messageInput.setAttribute('required', 'true');
         messageInput.setAttribute('aria-required', 'true');
+        messageInput.setAttribute('placeholder', 'Ecrivez un message au photographe');
         const messageErrorMessage =  document.createElement('span');
         messageErrorMessage.setAttribute('class', 'error');
         messageErrorMessage.setAttribute('aria-live', 'polite');
