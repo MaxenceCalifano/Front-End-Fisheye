@@ -14,7 +14,7 @@ function displayModal() {
     modal.setAttribute("aria-hidden", false);
 }
 
-function closeModal(event) {
+function closeModal() {
     const isModalOpen = body.getAttribute('aria-hidden');
     if(isModalOpen !== 'true') {
       return
