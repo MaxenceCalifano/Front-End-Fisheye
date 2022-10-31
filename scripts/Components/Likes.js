@@ -16,7 +16,7 @@ class likes {
         likes.appendChild(likesText);
         const heart = document.createElement('span');
         heart.className = "heart";
-        heart.addEventListener('click', () => {
+        likes.addEventListener('click', () => {
                 if(!this._isLiked) {
                     this._likes = this._likes + 1;
                     this._isLiked = true;

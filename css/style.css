@@ -51,6 +51,18 @@ h2 {
     margin-top: 100px;
 }
 
+@media (max-width:850px) {
+    .photographer_section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:650px) {
+    .photographer_section {
+        grid-template-columns: 1fr;
+    }
+}
+
 .photographer_section article {
     justify-self: center;
     align-self: start;

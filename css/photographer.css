@@ -10,6 +10,8 @@
     justify-content: space-around;
     padding: 25px;
     gap: 10px;
+    flex-wrap: wrap;
+    height: 100%;
 }
 
 .photograph-header p:last-child {
@@ -74,6 +76,7 @@
 
 .likes {
     font-weight: 600;
+    cursor: pointer;
 }
 
 .captionAndLikes,
