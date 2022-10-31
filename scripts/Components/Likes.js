@@ -7,7 +7,7 @@ class likes {
         this._isLiked = false;
     }
     createLikesComponent() {
-        const like = document.querySelector('#test');
+        const like = document.querySelector('.like');
 
         const likes = document.createElement('div');
         likes.className = "likes";

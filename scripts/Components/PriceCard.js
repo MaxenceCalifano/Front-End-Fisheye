@@ -8,15 +8,21 @@ class price_card {
     render() {
         const priceCard = document.createElement('div');
         priceCard.className = 'priceCard';
+
+        const likesWrapper = document.createElement('div');
+        likesWrapper.className = "likesWrapper";
+
         const likes = document.createElement('p');
-        likes.setAttribute('id', 'test')
+        likes.setAttribute('class', 'like')
         likes.textContent = this._likes.result();
+
         const heart = document.createElement('span');
         heart.className = "heart priceCardHeart";
-        likes.appendChild(heart)
+        likesWrapper.append(likes, heart)
+
         const priceHolder = document.createElement('p');
         priceHolder.textContent = `${this._price}€ / jour`;
-        priceCard.append(likes, priceHolder);
+        priceCard.append(likesWrapper, priceHolder);
         return priceCard;
     }
 }

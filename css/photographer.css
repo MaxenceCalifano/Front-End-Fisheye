@@ -33,6 +33,12 @@
     align-items: center;
 }
 
+.likesWrapper {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
 .priceCard>p {
     margin: 10px;
     font-weight: 600;
