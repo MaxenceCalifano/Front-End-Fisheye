@@ -6,7 +6,7 @@ class lightbox {
         this.firstElement;
 
         this.links.forEach((element) => {
-           element.addEventListener('click', (event) => {
+           element.parentElement.parentElement.addEventListener('click', (event) => {
             this.open(element, event)
           }) 
           
@@ -108,16 +108,20 @@ class lightbox {
          this.firstElement.style.marginLeft = `${this.currentElementIndex * -100}%`;
 
          closeButton.focus();
-         document.addEventListener('keydown', function keyBoardEvent(event) {
-          if(event.key === "ArrowLeft") {
+
+         const keyBoardEvent = (e) => {
+          if(e.key === "ArrowLeft") {
+            console.log(this.prev)
             this.prev();
-          } else if (event.key === "ArrowRight") {
+          } else if (e.key === "ArrowRight") {
             this.next()
-          } else if (event.key === "Escape") {
+          } else if (e.key === "Escape") {
             document.removeEventListener('keydown', keyBoardEvent)
             lightbox.remove()
           }
-        })
+        }
+
+         document.addEventListener('keydown', (e) => keyBoardEvent(e))
 
          return lightbox;
     }
