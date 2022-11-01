@@ -9,8 +9,10 @@ class likes {
     createLikesComponent() {
         const like = document.querySelector('.like');
 
-        const likes = document.createElement('div');
+        const likes = document.createElement('button');
         likes.className = "likes";
+        likes.setAttribute('type', 'button'); 
+        likes.setAttribute('aria-label', "Liker l'image"); 
         const likesText = document.createElement('p');
         likesText.textContent = this._likes;
         likes.appendChild(likesText);
@@ -24,12 +26,13 @@ class likes {
                     this._totalLikes.increment();
 
                     like.textContent = this._totalLikes.result()
+                    likes.setAttribute('aria-label', "Déliker l'image"); 
                 } else {
                     this._likes = this._likes - 1;
                     this._isLiked = false;
                     likesText.textContent = this._likes;
                     this._totalLikes.decrement();
-
+                    likes.setAttribute('aria-label', "Liker l'image"); 
                     like.textContent = this._totalLikes.result()
                 }
             
