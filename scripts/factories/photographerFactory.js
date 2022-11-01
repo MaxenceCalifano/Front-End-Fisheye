@@ -5,7 +5,7 @@ class photographerFactory {
     constructor(data) {
         this._data = data;
 
-        const { name } = data;
+        //const { name } = data;
         return new userCard(data).render()
     }
 }

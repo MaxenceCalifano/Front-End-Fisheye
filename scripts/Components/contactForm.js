@@ -10,7 +10,7 @@ function displayModal() {
       closeModal(event);
       document.removeEventListener('keydown', handleclose)
  } })
-	  modal.style.display = "block";
+    modal.style.display = "block";
     modal.setAttribute("aria-hidden", false);
 }
 

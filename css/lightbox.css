@@ -8,7 +8,7 @@
 }
 
 .lightbox button {
-    text-indent: -3000px;
+    text-indent: -10000px;
     border: none;
     opacity: 0.5;
     transition: 300ms;

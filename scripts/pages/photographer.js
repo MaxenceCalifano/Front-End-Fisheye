@@ -87,7 +87,7 @@ async function getPhotographer() {
         }
         createThumbnails()
         console.log(photographerMedia)
-};
+}
 
 
 async function init() {
@@ -103,7 +103,7 @@ async function init() {
 
     displayData(photographer, totalLikes, photographerMedia);
    // displayMedia(photographerMedia, photographer.name, totalLikes);
-    const lightBox = new lightbox();
-};
+    new lightbox();
+}
 
 init();

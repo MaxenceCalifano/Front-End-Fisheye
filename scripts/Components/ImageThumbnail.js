@@ -1,4 +1,3 @@
-import { lightbox } from './Lightbox.js';
 class image_thumbnail {
     constructor(media, name) {
         this._media = media;

@@ -71,7 +71,7 @@ class lightbox {
          lightbox.classList.add("lightbox");
          lightbox.setAttribute('role', 'dialog');
 
-        body.setAttribute("aria-hidden", true);
+        document.body.setAttribute("aria-hidden", true);
         lightbox.setAttribute("aria-hidden", false);
 
          

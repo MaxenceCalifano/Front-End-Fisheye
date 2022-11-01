@@ -1,5 +1,3 @@
-import { TotalLikes } from './TotalLikes.js'
-
 class likes {
     constructor(likes, totalLikes) {
         this._likes = likes;

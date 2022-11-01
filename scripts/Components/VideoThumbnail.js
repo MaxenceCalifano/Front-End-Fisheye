@@ -17,9 +17,9 @@ class video_thumbnail {
         video.setAttribute('controls', true)
 
         video.appendChild(source);
-        video.addEventListener('play', (e) => video.setAttribute('aria-label', 'la vidéo est en cours de lecture'));
-        video.addEventListener('pause', (e) => video.setAttribute('aria-label', 'la vidéo est en pause'));
-        video.addEventListener('ended', (e) => video.setAttribute('aria-label', 'la vidéo est arrétée car la lecture a atteint la fin'));
+        video.addEventListener('play', () => video.setAttribute('aria-label', 'la vidéo est en cours de lecture'));
+        video.addEventListener('pause', () => video.setAttribute('aria-label', 'la vidéo est en pause'));
+        video.addEventListener('ended', () => video.setAttribute('aria-label', 'la vidéo est arrétée car la lecture a atteint la fin'));
 
         videoWrapper.appendChild(video);
       
