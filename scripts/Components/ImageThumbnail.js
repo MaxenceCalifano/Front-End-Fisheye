@@ -4,8 +4,8 @@ class image_thumbnail {
         this._name = name;
     }
     render() {
-            const imageLink = document.createElement('a');
-            imageLink.href = "#";
+            const imageLink = document.createElement('div');
+            imageLink.setAttribute('aria-label', "Ouvrir l'image en plein écran")
 
             const imageWrapper = document.createElement('figure');
 

@@ -25,6 +25,7 @@ class contact_modal {
 
         const img = document.createElement('img');
         img.setAttribute('src', '../../assets/icons/closeContact.svg');
+        img.setAttribute('alt', "");
         close.setAttribute('aria-label', 'Fermer le formulaire de contact');
         close.setAttribute('onclick', 'closeModal()');
 

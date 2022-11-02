@@ -4,8 +4,8 @@ class video_thumbnail {
         this._name = name;
     }
     render() {
-        const videoLink = document.createElement('a');
-        videoLink.href = "#";
+        const videoLink = document.createElement('div');
+        videoLink.setAttribute('aria-label', "Ouvrir la vidéo en plein écran")
 
         const videoWrapper = document.createElement('figure');
 

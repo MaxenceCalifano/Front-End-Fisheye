@@ -53,13 +53,9 @@
     justify-content: space-between;
 }
 
-.thumbs_gallery div {
+.thumbs_gallery div div {
     transition: all ease 50ms;
-}
-
-.thumbs_gallery a {
-    text-decoration: none;
-    color: var(--primary-color);
+    cursor: pointer;
 }
 
 .thumbs_gallery img {
