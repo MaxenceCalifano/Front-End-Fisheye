@@ -13,7 +13,7 @@ class video_thumbnail {
         const video = document.createElement("video");
         const source = document.createElement("source");
 
-        source.setAttribute('src', `../../assets/images/Sample Photos/${this._name}/${this._media.video}`);
+        source.setAttribute('src', `assets/images/Sample Photos/${this._name}/${this._media.video}`);
         video.setAttribute('aria-label', "la lecture de la vidéo n'est pas lancée");
         video.setAttribute('controls', true)
 
