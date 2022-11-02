@@ -11,7 +11,7 @@ class image_thumbnail {
             const imageWrapper = document.createElement('figure');
 
             const image = document.createElement('img');
-            image.setAttribute('src', `../../assets/images/Sample Photos/${this._name}/${this._media.image}`);
+            image.setAttribute('src', `assets/images/Sample%20Photos/${this._name}/${this._media.image}`);
             image.alt = this._media.title;
 
             imageWrapper.appendChild(image);
@@ -19,6 +19,7 @@ class image_thumbnail {
             imageLink.appendChild(imageWrapper);
             return imageLink;
     }
+    /* */
 }
 
 export { image_thumbnail }; 
