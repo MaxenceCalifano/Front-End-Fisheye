@@ -1,10 +1,10 @@
 import { price_card } from '../Components/PriceCard.js';
-import { photograph_header} from '../Components/Photograph_Header.js';
+import { photograph_header} from '../Components/PhotographHeader.js';
 import { logo } from '../Components/Logo.js';
 import { dropdown } from '../Components/Dropdown.js';
 import { contact_modal } from '../Components/ContactModal.js';
 import { lightbox } from '../Components/Lightbox.js';
-import { caption_and_likes } from '../Components/Caption_and_likes.js';
+import { caption_and_likes } from '../Components/CaptionAndLikes.js';
 import { TotalLikes } from '../Components/TotalLikes.js'
 
 

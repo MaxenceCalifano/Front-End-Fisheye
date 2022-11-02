@@ -1,8 +1,6 @@
-const body = document.querySelector("body");
-
 function displayModal() {
     const modal = document.getElementById("contact_modal");
-    body.setAttribute("aria-hidden", true);
+    document.body.setAttribute("aria-hidden", true);
     const closeButton = document.querySelector(".modal header img");
     closeButton.focus();
     document.addEventListener('keydown', function handleclose(event) {
@@ -15,7 +13,7 @@ function displayModal() {
 }
 
 function closeModal() {
-    const isModalOpen = body.getAttribute('aria-hidden');
+    const isModalOpen = document.body.getAttribute('aria-hidden');
     if(isModalOpen !== 'true') {
       return
     } else {
@@ -28,6 +26,6 @@ function closeModal() {
       modal.setAttribute("aria-hidden", true);
       modal.style.display= "none";
     }, {once: true})
-    body.setAttribute("aria-hidden", false);
+    document.body.setAttribute("aria-hidden", false);
     }
 }
