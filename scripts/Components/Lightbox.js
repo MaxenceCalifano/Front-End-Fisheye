@@ -1,6 +1,6 @@
 class lightbox {
     constructor() {
-        this.links = Array.from(document.querySelectorAll('.thumbs_gallery div figure > :first-child'));
+        this.links = Array.from(document.querySelectorAll('.thumbs_gallery a figure > :first-child'));
         this.currentElementIndex;
        
         this.firstElement;
