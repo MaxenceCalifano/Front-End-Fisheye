@@ -54,20 +54,20 @@ async function getPhotographer() {
 
       
          dropDown.addEventListener('change', (event) => {
-            if(event.target.value ==='popularite') {
+            if(event.target.value ==='popularite')
                 photographerMedia.sort((a, b) => a.likes - b.likes )    
-            } else if (event.target.value ==='date') {
+            if (event.target.value ==='date')
                 photographerMedia.sort((a, b) => new Date(a.date)  -  new Date(b.date))
-            } else if(event.target.value ==='titre') {
+            if(event.target.value ==='titre') {
                 photographerMedia.sort((a, b) => a.title.localeCompare(b.title))
             }
-           /*  const thumbs = document.querySelectorAll(".thumbs_gallery > *");
+            const thumbs = document.querySelectorAll(".thumbs_gallery > *");
             thumbs.forEach(element => element.remove())
-            createThumbnails(); */
-            for (let i = 0; i < photographerMedia.length; i++) {
+            createThumbnails();
+         /*    for (let i = 0; i < photographerMedia.length; i++) {
                 photographerMedia[i].HTMLElement.style.order = i + 1;
             }
-            console.log(photographerMedia)
+            console.log(photographerMedia) */
         })
         
         // Default order
@@ -84,9 +84,9 @@ async function getPhotographer() {
                 media.HTMLElement = mediaWrapper;
                 thumbsGallery.appendChild(mediaWrapper);
             })
+            new lightbox();
         }
         createThumbnails()
-        console.log(photographerMedia)
 }
 
 
@@ -99,11 +99,9 @@ async function init() {
     let total = 0;
     photographerMedia.forEach( media => total += media.likes)
     const totalLikes = new TotalLikes(total);
-    console.log(totalLikes)
 
     displayData(photographer, totalLikes, photographerMedia);
    // displayMedia(photographerMedia, photographer.name, totalLikes);
-    new lightbox();
 }
 
 init();

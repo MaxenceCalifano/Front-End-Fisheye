@@ -111,7 +111,6 @@ class lightbox {
 
          const keyBoardEvent = (e) => {
           if(e.key === "ArrowLeft") {
-            console.log(this.prev)
             this.prev();
           } else if (e.key === "ArrowRight") {
             this.next()
