@@ -55,7 +55,7 @@ async function getPhotographer() {
       
          dropDown.addEventListener('change', (event) => {
             if(event.target.value ==='popularite')
-                photographerMedia.sort((a, b) => a.likes - b.likes )    
+                photographerMedia.sort((a, b) => a.likes - b.likes ).reverse()   
             if (event.target.value ==='date')
                 photographerMedia.sort((a, b) => new Date(a.date)  -  new Date(b.date))
             if(event.target.value ==='titre') {
@@ -71,7 +71,7 @@ async function getPhotographer() {
         })
         
         // Default order
-        photographerMedia.sort((a, b) => a.likes - b.likes )
+        photographerMedia.sort((a, b) => a.likes - b.likes ).reverse()
         
         const createThumbnails = () => {
             photographerMedia.forEach( media => {
@@ -93,8 +93,8 @@ async function getPhotographer() {
 async function init() {
     // Récupère les datas des photographes
 
-    const { photographer } = await getPhotographer();
-    const { photographerMedia } = await getPhotographer();
+    const { photographer, photographerMedia } = await getPhotographer();
+    //const { photographerMedia } = await getPhotographer();
 
     let total = 0;
     photographerMedia.forEach( media => total += media.likes)
